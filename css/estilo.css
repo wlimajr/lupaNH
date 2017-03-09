@@ -1,0 +1,118 @@
+/*html, body{
+  height: 100%;
+	margin: 0;
+	padding: 0;
+	background-size: 100%;
+  background-repeat: no-repeat;
+  background: #42a5f5;
+}*/
+
+#content-img{
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10%;
+}
+
+#img-login{
+  width: 100%;
+  height: auto;
+}
+
+#form-login{
+  padding:10px 20px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.item-content{
+  width: 100%;
+  border-bottom: 2px solid;
+  border-color: #fff;
+  padding: 1%;
+  height: auto;
+}
+
+.img-user{
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  float: left;
+  /*position: relative;*/
+  max-width: 65px;
+  max-height: 65px;
+  margin-top: 1%;
+  margin-right: 2%;
+}
+
+.user-data{
+  position: relative;
+}
+
+.user{
+  font-weight: bold;
+  font-size: 18px;
+
+}
+.comment{
+  text-align: justify;
+  
+}
+
+
+.rateYo{
+  position: absolute;
+}
+/*#maps{
+  width: 96%;
+  height: 40%;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-color: #fff;
+  border: 2px solid;
+}*/
+
+#description{
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  text-align: justify;
+}
+
+
+table{
+  width: 100%;
+}
+
+table > thead > tr >th{
+  text-align: center;
+}
+
+#maps{
+    width: 90vw;
+    height: 40vh;
+}
+
+#map-content{
+   
+}
+
+
+
+  /*#custom-border-radius{
+    margin-top: -10px;
+  }*/
+/*.topo{
+  background-color: black;
+}*/
+/*.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head + body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head + body .ui-btn.ui-btn-a:visited{
+  background-color: #f3f3f3
+}*/
+
+/*
+.ui-icon-car:after {
+    background-image: url("images/icons-png/car-white.png") !important;
+    background-size: 18px 18px;
+}*/

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- <meta http-equiv='cache-control' content='no-cache'>
+        <meta http-equiv='expires' content='0'>
+        <meta http-equiv='pragma' content='no-cache'> -->
+
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+  <link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
+  <link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.css">
+  <!--<link rel="stylesheet" href="css/jquery.rateyo.css">-->
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/fastClick.js"></script>
+  <script type="text/javascript" src="js/jquery.mobile.js"></script>
+  <script type="text/javascript" src="js/mapa.js"></script>
+  <!--<script type="text/javascript" src="js/jquery.rateyo.js"></script>-->
+
+  <script src="js/app.js"></script>
+
+  <!-- <script src="js/mapa.js"></script> -->
+
+</head>
+
+<body onload="navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);">
+  <!--página home com menu-->
+  <div data-role="page" id="home" data-theme="a">
+
+
+    <!--header-->
+    <div data-role="header" data-theme="a" data-position="fixed">
+      <!--<a href="#mypanel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-left" data-position="fixed"></a>-->
+      <!--<a href="#login" data-rel="back" class="ui-btn ui-shadow ui-corner-all  ui-btn-icon-notext ui-btn-right" data-transition="fade">Logout</a>-->
+      <h1>Home</h1>
+    </div>
+
+    <div data-role="content">
+
+      <a href="#asphalt" data-transition="slide">
+        <input type="button" data-icon="" data-iconpos="top" value="Asfalto">
+      </a>
+      <a href="#lighting" data-transition="slide">
+        <input type="button" data-icon="" data-iconpos="top" value="Iluminação">
+      </a>
+      <a href="#water" data-transition="slide">
+        <input type="button" data-icon="" data-iconpos="top" value="Água">
+      </a>
+      <a href="#trash" data-transition="slide">
+        <input type="button" data-icon="" data-iconpos="top" value="Coleta de lixo">
+      </a>
+      <a href="#sewer" data-transition="slide">
+        <input type="button" data-icon="" data-iconpos="top" value="Esgoto">
+      </a>
+
+    </div>
+
+  </div>
+  <!--pagina de asfaltos-->
+  <div data-role="page" id="asphalt" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
+      <h1>Asfalto</h1>
+    </div>
+    <div data-role="content">
+      <a href="#" class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-top">Coordenada inicial</a>
+      <a href="#" class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-top">Coordenada final</a>
+      <a href="#" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-top">Enviar</a>
+      <a href="#" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-top">Cancelar</a>
+    </div>
+  </div>
+  <div data-role="page" id="lighting" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
+      <h1>Iluminação</h1>
+    </div>
+    <div data-role="content">
+      lçjsadkfj
+    </div>
+  </div>
+  <div data-role="page" id="water" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
+      <h1>Água</h1>
+    </div>
+    <div data-role="content">
+      <form id="form-agua">
+        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
+          <legend>Possui água encanada na sua casa, nesse momento?</legend>
+          <input type="radio" name="encanada" id="radio-choice-w-6a" value="1" checked="checked">
+          <label for="radio-choice-w-6a">Sim</label>
+          <input type="radio" name="encanada" id="radio-choice-w-6b" value="0">
+          <label for="radio-choice-w-6b">Não</label>
+        </fieldset>
+        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
+          <legend>Possui poço na sua casa?</legend>
+          <input type="radio" name="poco" id="radio-choice-w-61" value="1" checked="checked">
+          <label for="radio-choice-w-61">Sim</label>
+          <input type="radio" name="poco" id="radio-choice-w-62" value="0">
+          <label for="radio-choice-w-62">Não</label>
+        </fieldset>
+        <label for="select-choice-1" class="select">Selecione um tipo de poço</label>
+        <select name="tipo_poco" id="select-choice-1">
+          <option value="0">Artesiano</option>
+          <option value="1">Amazonas</option>
+        </select>
+        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarForm()">Enviar</a>
+      </form>
+      <!--<a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarForm()">Enviar</a>-->
+    </div>
+  </div>
+  <div data-role="page" id="trash" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
+      <h1>Lixo</h1>
+    </div>
+    <div data-role="content">
+      lçjsadkfj
+    </div>
+  </div>
+  <div data-role="page" id="sewer" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
+      <h1>Esgoto</h1>
+    </div>
+    <div data-role="content">
+      Sua casa possui rede de esgoto?
+      <a href="#" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-top">Sim</a>
+      <a href="#" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-top">Não</a>
+    </div>
+  </div>
+</body>
+
+</html>
