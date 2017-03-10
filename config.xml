@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "br.teste.alter"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+	
+	<!--nome do app-->
+    <name>Teste Cam</name>
+
+	<!--descrição-->
+    <description>
+	Teste Cam
+    </description>
+
+	<!--autor-->
+    <author href="http://www.prodap.ap.gov.br" email="prodap.app@gmail.com">
+		Altemir Almeida
+    </author>
+	  <platform name="android"/>
+	  <plugin name="cordova-plugin-camera" spec="2.3.1" source="npm"/>
+  	  <plugin name="cordova-plugin-geolocation" spec="1.0.1" source="npm"/>
+
+	  <preference name="orientation" value="portrait" />
+	  <!--<preference name="fullscreen" value="true" />-->
+
+	
+	<!--plugins-->
+
+	
+	<!--splashcreen-->
+
+</widget>
