@@ -29,14 +29,14 @@ function onErrorGeo(error) {
     'message: ' + error.message + '\n');
 }
 
-// função para setar as coordenadas
+// função para setar as coordenadas form-agua
 function setCoordAgua() {
   $("#latAgua").val(latitude);
   $("#longAgua").val(longitude);
   
 }
 
-
+// função para enviar formulário de água
 function enviarForm() {
     var dataForm = $("#form-agua").serialize();
     $.ajax({
