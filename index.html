@@ -20,19 +20,14 @@
 </head>
 
 <body onload="navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);">
+
   <!--página home-->
+
   <div data-role="page" id="home" data-theme="a">
-
-
-    <!--header-->
     <div data-role="header" data-theme="a" data-position="fixed">
-      <!--<a href="#mypanel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-left" data-position="fixed"></a>-->
-      <!--<a href="#login" data-rel="back" class="ui-btn ui-shadow ui-corner-all  ui-btn-icon-notext ui-btn-right" data-transition="fade">Logout</a>-->
       <h1>Home</h1>
     </div>
-
     <div data-role="content">
-
       <a href="#asphalt" data-transition="slide">
         <input type="button" data-icon="" data-iconpos="top" value="Asfalto">
       </a>
@@ -48,10 +43,9 @@
       <a href="#sewer" data-transition="slide">
         <input type="button" data-icon="" data-iconpos="top" value="Esgoto">
       </a>
-
     </div>
-
   </div>
+
   <!--pagina de asfaltos-->
   <div data-role="page" id="asphalt" data-theme="a">
     <div data-role="header" data-position="fixed">
@@ -74,6 +68,8 @@
       lçjsadkfj
     </div>
   </div>
+
+  <!--página água-->
   <div data-role="page" id="water" data-theme="a">
     <div data-role="header" data-position="fixed">
       <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
@@ -104,9 +100,10 @@
         </select>
         <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarForm()">Enviar</a>
       </form>
-      <!--<a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarForm()">Enviar</a>-->
     </div>
   </div>
+
+  <!--página de lixo-->
   <div data-role="page" id="trash" data-theme="a">
     <div data-role="header" data-position="fixed">
       <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
@@ -116,6 +113,8 @@
       lçjsadkfj
     </div>
   </div>
+
+  <!--página de esgoto-->
   <div data-role="page" id="sewer" data-theme="a">
     <div data-role="header" data-position="fixed">
       <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
