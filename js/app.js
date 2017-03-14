@@ -13,6 +13,7 @@ $(function () {
 var latitude;
 var longitude;
 
+// função para pegar as coordenadas
 var onSuccessGeo = function (position) {
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
@@ -28,10 +29,13 @@ function onErrorGeo(error) {
     'message: ' + error.message + '\n');
 }
 
-function setCoord() {
-  $("#longitude").val(longitude);
-  $("#latitude").val(latitude);
+// função para setar as coordenadas
+function setCoordAgua() {
+  $("#latAgua").val(latitude);
+  $("#longAgua").val(longitude);
+  
 }
+
 
 function enviarForm() {
     var dataForm = $("#form-agua").serialize();
