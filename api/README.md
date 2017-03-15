@@ -1,1 +1,0 @@
-Api do app LupaNH
