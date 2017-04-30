@@ -33,5 +33,16 @@ function onErrorGeo(error) {
 function setCoordAgua() {
   $("#latAgua").val(latitude);
   $("#longAgua").val(longitude);
-  
+}
+
+// função para setar as coordenadas form-lixo
+function setCoordLixo() {
+  $("#latLixo").val(latitude);
+  $("#longLixo").val(longitude);
+}
+
+// função para setar as coordenadas form-esgoto
+function setCoordEsgoto() {
+  $("#latEsgoto").val(latitude);
+  $("#longEsgoto").val(longitude);
 }
