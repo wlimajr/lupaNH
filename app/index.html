@@ -24,7 +24,7 @@
 
   <!--página home-->
 
-  <div data-role="page" id="home" data-theme="b">
+  <div data-role="page" id="home" data-theme="a">
     <div data-role="header" data-position="fixed">
       <h1>Home</h1>
     </div>
@@ -38,11 +38,11 @@
       <a href="#water" data-transition="slide">
         <input type="button" data-icon="" data-iconpos="top" value="Água" onclick="setCoordAgua()">
       </a>
-      <a href="#trash" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Coleta de lixo">
+      <a href="#trash" data-transition="slide">
+        <input type="button" data-icon="" data-iconpos="top" value="Coleta de lixo" onclick="setCoordLixo()">
       </a>
       <a href="#sewer" data-transition="slide">
-        <input type="button" data-icon="" data-iconpos="top" value="Esgoto">
+        <input type="button" data-icon="" data-iconpos="top" value="Esgoto" onclick="setCoordEsgoto()">
       </a>
     </div>
   </div>
@@ -108,10 +108,34 @@
   <div data-role="page" id="trash" data-theme="a">
     <div data-role="header" data-position="fixed">
       <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
-      <h1>Lixo</h1>
+      <h1>Coleta de Lixo</h1>
     </div>
     <div data-role="content">
-      lçjsadkfj
+      <form id="form-lixo">
+        <input type="hidden" name="latitude" id="latLixo">
+        <input type="hidden" name="longitude" id="longLixo">
+
+        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
+          <legend>Possui coleta de lixo na sua casa?</legend>
+          <input type="radio" name="coleta" id="radio-choice-w-6a" value="1" checked="checked">
+          <label for="radio-choice-w-6a">Sim</label>
+          <input type="radio" name="coleta" id="radio-choice-w-6b" value="0">
+          <label for="radio-choice-w-6b">Não</label>
+        </fieldset>
+
+        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
+          <legend>Com que frequencia?</legend>
+          <input type="radio" name="frequencia" id="radio-choice-w-6c" value="nenhuma" checked="checked">
+          <label for="radio-choice-w-6c">Nenhuma</label>
+          <input type="radio" name="frequencia" id="radio-choice-w-6d" value="diario" checked="checked">
+          <label for="radio-choice-w-6d">Diário</label>
+          <input type="radio" name="frequencia" id="radio-choice-w-6e" value="semanal">
+          <label for="radio-choice-w-6e">Semanal</label>
+          <input type="radio" name="frequencia" id="radio-choice-w-6f" value="mensal">
+          <label for="radio-choice-w-6f">Mensal</label>
+        </fieldset>
+        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormLixo()">Enviar</a>
+      </form>
     </div>
   </div>
 
@@ -122,9 +146,18 @@
       <h1>Esgoto</h1>
     </div>
     <div data-role="content">
-      Sua casa possui rede de esgoto?
-      <a href="#" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-top">Sim</a>
-      <a href="#" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-top">Não</a>
+      <form id="form-esgoto">
+        <input type="hidden" name="latitude" id="latEsgoto">
+        <input type="hidden" name="longitude" id="longEsgoto">
+        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
+          <legend>Sua casa possui esgoto?</legend>
+          <input type="radio" name="esgoto" id="radio-choice-w-6a" value="1" checked="checked">
+          <label for="radio-choice-w-6a">Sim</label>
+          <input type="radio" name="esgoto" id="radio-choice-w-6b" value="0">
+          <label for="radio-choice-w-6b">Não</label>
+        </fieldset>
+        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormEsgoto()">Enviar</a>
+      </form>
     </div>
   </div>
 </body>
