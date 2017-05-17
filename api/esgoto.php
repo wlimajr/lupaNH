@@ -4,8 +4,9 @@ class Esgoto{
 
 	public static function adicionar($latitude, $longitude, $esgoto){
          try{
+            require_once('dados_banco.php');
             $sql = "insert into esgoto (latitude, longitude, esgoto) values (:latitude, :longitude, :esgoto)";
-            $p_sql = new PDO ('mysql:host=localhost;dbname=hiperlocal','root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+            $p_sql = new PDO ($dados_banco['host'],$dados_banco['usuario'], $dados_banco['senha'], array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $p_sql->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
             $call = $p_sql->prepare($sql);
@@ -19,6 +20,7 @@ class Esgoto{
             );
             echo json_encode($resposta);
          }catch(Exception $e){
+             echo $e;
             $resposta = array(
                 "status" => "erro",
                 "mensagem" => "Ocorreu um erro, tente novamente em instantes!"

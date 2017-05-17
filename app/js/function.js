@@ -4,15 +4,17 @@ da pra colocar um item em cada formulario somente pra identificar pra onde deve 
 */
 
 // função para enviar formulário de água
-function enviarForm() {
+var url = "http://localhost/LUPANH/api";
+
+function enviarFormAgua() {
     var dataForm = $("#form-agua").serialize();
     $.ajax({
-        url: "http://172.16.15.83/app/agua",
+        url: url+"/agua",
         data: dataForm,
         method: 'POST',
     }).done(function(resposta) {
         var teste = resposta;
-        if (resposta == "ok") {
+        if (resposta.status == "ok") {
             alert(resposta.mensagem);
         } else {
             alert(resposta);
@@ -24,14 +26,18 @@ function enviarForm() {
 
 // função para enviar formulário de coleta de lixo
 function enviarFormLixo() {
+    // o usuario disse que nao tem esgoto
+    if (document.getElementsByName('coleta')[1].checked){
+        document.getElementById('frequenciaNull').checked = true;
+    }
     var dataForm = $("#form-lixo").serialize();
     $.ajax({
-        url: "http://172.16.15.83/app/lixo",
+        url: url+"/lixo",
         data: dataForm,
         method: 'POST',
     }).done(function(resposta) {
         var teste = resposta;
-        if (resposta == "ok") {
+        if (resposta.status == "ok") {
             alert(resposta.mensagem);
         } else {
             alert(resposta);
@@ -44,18 +50,19 @@ function enviarFormLixo() {
 // função para enviar formulário de esgoto
 function enviarFormEsgoto() {
     var dataForm = $("#form-esgoto").serialize();
+    console.log(dataForm);
     $.ajax({
-        url: "http://172.16.15.83/app/esgoto",
+        url: url+"/esgoto",
         data: dataForm,
         method: 'POST',
     }).done(function(resposta) {
         var teste = resposta;
-        if (resposta == "ok") {
+        if (resposta.status == "ok") {
             alert(resposta.mensagem);
         } else {
-            alert(resposta);
+            alert(resposta.mensagem);
         }
     }).fail(function () {
-        alert("erro");
+        alert('erro');
     });
 }
