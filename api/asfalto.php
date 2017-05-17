@@ -2,9 +2,9 @@
 
 class Asfalto{
 
-	public static function adionar($latitudeInicial, $longitudeInicial, $latitudeFinal, $longitudeFinal){
+	public static function adicionar($latitudeInicial, $longitudeInicial, $latitudeFinal, $longitudeFinal){
 		try{
-            $sql = "insert into aasfalto (latitude_inicial, longitude_inicial, latitude_final, longitude_final) values (:latitudeInicial, :longitudeInicial, :latitudeFinal, :longitudeFinal)";
+            $sql = "insert into asfalto (latitude_inicial, longitude_inicial, latitude_final, longitude_final) values (:latitudeInicial, :longitudeInicial, :latitudeFinal, :longitudeFinal)";
             $p_sql = new PDO ('mysql:host=localhost;dbname=hiperlocal','root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $p_sql->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
@@ -22,7 +22,7 @@ class Asfalto{
          }catch(Exception $e){
             $resposta = array(
                 "status" => "erro",
-                "mensagem" => "Ocorreu um erro, tente novamente em instantes!"
+                "mensagem" => $latitudeFinal
             );
             echo json_encode($resposta);
          }

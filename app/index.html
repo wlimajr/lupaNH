@@ -99,7 +99,7 @@
           <option value="0">Artesiano</option>
           <option value="1">Amazonas</option>
         </select>
-        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarForm()">Enviar</a>
+        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormAgua()">Enviar</a>
       </form>
     </div>
   </div>
@@ -117,22 +117,21 @@
 
         <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
           <legend>Possui coleta de lixo na sua casa?</legend>
-          <input type="radio" name="coleta" id="radio-choice-w-6a" value="1" checked="checked">
+          <input type="radio" name="coleta" id="radio-choice-w-6a" value="1" checked="checked" onclick="freqColetaLixo('habilitar');">
           <label for="radio-choice-w-6a">Sim</label>
-          <input type="radio" name="coleta" id="radio-choice-w-6b" value="0">
+          <input type="radio" name="coleta" id="radio-choice-w-6b" value="0" onclick="freqColetaLixo('desabilitar');">
           <label for="radio-choice-w-6b">Não</label>
         </fieldset>
 
-        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
+        <fieldset data-role="controlgroup" id="frequenciaColetaLixo" data-iconpos="right" data-theme="a">
           <legend>Com que frequencia?</legend>
-          <input type="radio" name="frequencia" id="radio-choice-w-6c" value="nenhuma" checked="checked">
-          <label for="radio-choice-w-6c">Nenhuma</label>
-          <input type="radio" name="frequencia" id="radio-choice-w-6d" value="diario" checked="checked">
-          <label for="radio-choice-w-6d">Diário</label>
-          <input type="radio" name="frequencia" id="radio-choice-w-6e" value="semanal">
-          <label for="radio-choice-w-6e">Semanal</label>
-          <input type="radio" name="frequencia" id="radio-choice-w-6f" value="mensal">
-          <label for="radio-choice-w-6f">Mensal</label>
+          <input type="radio" name="frequencia" id="radio-choice-w-6c" value="diario" checked="checked">
+          <label for="radio-choice-w-6c">Diario</label>
+          <input type="radio" name="frequencia" id="radio-choice-w-6d" value="semanal">
+          <label for="radio-choice-w-6d">Semanal</label>
+          <input type="radio" name="frequencia" id="radio-choice-w-6e" value="mensal">
+          <label for="radio-choice-w-6e">Mensal</label>
+          <input type="radio" name="frequencia" id="frequenciaNull" value="null" style="visibility:hidden;">
         </fieldset>
         <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormLixo()">Enviar</a>
       </form>

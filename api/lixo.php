@@ -5,7 +5,7 @@ class Lixo{
     public static function adicionar($latitude, $longitude, $coleta, $frequencia){
          try{
             $sql = "insert into lixo (latitude, longitude, coleta, frequencia) values (:latitude, :longitude, :coleta, :frequencia)";
-            $p_sql = new PDO ('mysql:host=localhost;dbname=hiperlocal','root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+            $p_sql = new PDO ('mysql:host=localhost;dbname=hiperlocal','root', '1234', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $p_sql->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
             $call = $p_sql->prepare($sql);

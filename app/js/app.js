@@ -46,3 +46,12 @@ function setCoordEsgoto() {
   $("#latEsgoto").val(latitude);
   $("#longEsgoto").val(longitude);
 }
+
+// funcao que vai verificar se é necessario habilitar ou nao a coleta de lixo
+function freqColetaLixo(status){
+  if (status=='habilitar'){
+    $('#frequenciaColetaLixo').show();
+  }else{
+    $('#frequenciaColetaLixo').hide();
+  }
+}
