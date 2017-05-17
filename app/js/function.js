@@ -5,7 +5,6 @@ da pra colocar um item em cada formulario somente pra identificar pra onde deve 
 
 // função para enviar formulário de água
 var url = "http://localhost/LUPANH/api";
-var asdf;
 
 function enviarFormAsfalto() {
     var dataForm = $("#form-asfalto").serialize();
@@ -18,7 +17,7 @@ function enviarFormAsfalto() {
             asdf = resposta;
             alert(resposta.mensagem);
         } else {
-            alert("erro" + resposta);
+            alert(resposta);
         }
     }).fail(function () {
         alert("erro");
@@ -28,17 +27,18 @@ function enviarFormAsfalto() {
 function enviarFormAgua() {
     var dataForm = $("#form-agua").serialize();
     $.ajax({
+
         url: url + "/agua",
         data: dataForm,
-        method: 'POST',
-        beforeSend: function () {
-            $.mobile.loading('show');
-        }
-    }).done(function (resposta) {
+        method: 'POST'
+        // beforeSend: function () {
+        //     $.mobile.loading('show');
+        // }
+    }).done(function(resposta) {
         if (resposta.status == "ok") {
             alert(resposta.mensagem);
         } else {
-            alert(resposta);
+            alert(resposta.mensagem);
         }
     }).fail(function () {
         alert("erro");
@@ -47,11 +47,15 @@ function enviarFormAgua() {
 
 // função para enviar formulário de coleta de lixo
 function enviarFormLixo() {
+    // o usuario disse que nao tem esgoto
+    if (document.getElementsByName('coleta')[1].checked){
+        document.getElementById('frequenciaNull').checked = true;
+    }
     var dataForm = $("#form-lixo").serialize();
     $.ajax({
-        url: url + "/lixo",
+        url: url+"/lixo",
         data: dataForm,
-        method: 'POST',
+        method: 'POST'
     }).done(function (resposta) {
         var teste = resposta;
         if (resposta.status == "ok") {
@@ -67,17 +71,20 @@ function enviarFormLixo() {
 // função para enviar formulário de esgoto
 function enviarFormEsgoto() {
     var dataForm = $("#form-esgoto").serialize();
+    console.log(dataForm);
     $.ajax({
+
         url: url + "/esgoto",
         data: dataForm,
         method: 'POST',
-    }).done(function (resposta) {
+    }).done(function(resposta) {
+
         if (resposta.status == "ok") {
             alert(resposta.mensagem);
         } else {
             alert(resposta);
         }
     }).fail(function () {
-        alert("erro");
+        alert('erro');
     });
 }

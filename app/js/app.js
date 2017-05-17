@@ -61,24 +61,16 @@ function setCoordAsfaltFinal(){
   $("#longitudeFinal").val(longitude);
 }
 
-//  função para setar as coordenadas form-agua
-// function setCoordAgua() {
-//   navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
-//   $("#latAgua").val(latitude);
-//   $("#longAgua").val(longitude);
-// }
+function setCoordEsgoto() {
+  $("#latEsgoto").val(latitude);
+  $("#longEsgoto").val(longitude);
+}
 
-//  função para setar as coordenadas form-lixo
-// function setCoordLixo() {
-//   navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
-//   $("#latLixo").val(latitude);
-//   $("#longLixo").val(longitude);
-// }
-
-// função para setar as coordenadas form-esgoto
-// function setCoordEsgoto() {
-//   navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
-//   $("#latEsgoto").val(latitude);
-//   $("#longEsgoto").val(longitude);
-// }
+function freqColetaLixo(status){
+  if (status=='habilitar'){
+    $('#frequenciaColetaLixo').show();
+  }else{
+    $('#frequenciaColetaLixo').hide();
+  }
+}
 
