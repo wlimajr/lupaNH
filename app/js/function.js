@@ -4,15 +4,38 @@ da pra colocar um item em cada formulario somente pra identificar pra onde deve 
 */
 
 // função para enviar formulário de água
-function enviarForm() {
+var url = "http://localhost/LUPANH/api";
+var asdf;
+
+function enviarFormAsfalto() {
+    var dataForm = $("#form-asfalto").serialize();
+    $.ajax({
+        url: url + "/asfalto",
+        data: dataForm,
+        method: 'POST'
+    }).done(function (resposta) {
+        if (resposta.status == "ok") {
+            asdf = resposta;
+            alert(resposta.mensagem);
+        } else {
+            alert("erro" + resposta);
+        }
+    }).fail(function () {
+        alert("erro");
+    });
+}
+
+function enviarFormAgua() {
     var dataForm = $("#form-agua").serialize();
     $.ajax({
-        url: "http://172.16.15.83/app/agua",
+        url: url + "/agua",
         data: dataForm,
         method: 'POST',
-    }).done(function(resposta) {
-        var teste = resposta;
-        if (resposta == "ok") {
+        beforeSend: function () {
+            $.mobile.loading('show');
+        }
+    }).done(function (resposta) {
+        if (resposta.status == "ok") {
             alert(resposta.mensagem);
         } else {
             alert(resposta);
@@ -26,12 +49,12 @@ function enviarForm() {
 function enviarFormLixo() {
     var dataForm = $("#form-lixo").serialize();
     $.ajax({
-        url: "http://172.16.15.83/app/lixo",
+        url: url + "/lixo",
         data: dataForm,
         method: 'POST',
-    }).done(function(resposta) {
+    }).done(function (resposta) {
         var teste = resposta;
-        if (resposta == "ok") {
+        if (resposta.status == "ok") {
             alert(resposta.mensagem);
         } else {
             alert(resposta);
@@ -45,12 +68,11 @@ function enviarFormLixo() {
 function enviarFormEsgoto() {
     var dataForm = $("#form-esgoto").serialize();
     $.ajax({
-        url: "http://172.16.15.83/app/esgoto",
+        url: url + "/esgoto",
         data: dataForm,
         method: 'POST',
-    }).done(function(resposta) {
-        var teste = resposta;
-        if (resposta == "ok") {
+    }).done(function (resposta) {
+        if (resposta.status == "ok") {
             alert(resposta.mensagem);
         } else {
             alert(resposta);

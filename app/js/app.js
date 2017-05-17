@@ -29,20 +29,56 @@ function onErrorGeo(error) {
     'message: ' + error.message + '\n');
 }
 
-// função para setar as coordenadas form-agua
-function setCoordAgua() {
-  $("#latAgua").val(latitude);
-  $("#longAgua").val(longitude);
+
+function setCoord(x){
+  if (x == "agua"){
+    navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+    $("#latAgua").val(latitude);
+    $("#longAgua").val(longitude);
+    
+  }else if(x == "lixo"){
+    navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+    $("#latLixo").val(latitude);
+    $("#longLixo").val(longitude);
+
+  }else if(x == "esgoto"){
+    navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+    $("#latEsgoto").val(latitude);
+    $("#longEsgoto").val(longitude);
+  }
 }
 
-// função para setar as coordenadas form-lixo
-function setCoordLixo() {
-  $("#latLixo").val(latitude);
-  $("#longLixo").val(longitude);
+//função para setar as coordenadas form-asfalto
+function setCoordAsfaltIni(){
+  navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+  $("#latitudeInicial").val(latitude);
+  $("#longitudeInicial").val(longitude);
 }
+
+function setCoordAsfaltFinal(){
+  navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+  $("#latitudeFinal").val(latitude);
+  $("#longitudeFinal").val(longitude);
+}
+
+//  função para setar as coordenadas form-agua
+// function setCoordAgua() {
+//   navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+//   $("#latAgua").val(latitude);
+//   $("#longAgua").val(longitude);
+// }
+
+//  função para setar as coordenadas form-lixo
+// function setCoordLixo() {
+//   navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+//   $("#latLixo").val(latitude);
+//   $("#longLixo").val(longitude);
+// }
 
 // função para setar as coordenadas form-esgoto
-function setCoordEsgoto() {
-  $("#latEsgoto").val(latitude);
-  $("#longEsgoto").val(longitude);
-}
+// function setCoordEsgoto() {
+//   navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+//   $("#latEsgoto").val(latitude);
+//   $("#longEsgoto").val(longitude);
+// }
+

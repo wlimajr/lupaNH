@@ -24,7 +24,7 @@
 
   <!--página home-->
 
-  <div data-role="page" id="home" data-theme="a">
+  <div data-role="page" id="home" data-theme="b">
     <div data-role="header" data-position="fixed">
       <h1>Home</h1>
     </div>
@@ -36,13 +36,13 @@
         <input type="button" data-icon="" data-iconpos="top" value="Iluminação">
       </a>
       <a href="#water" data-transition="slide">
-        <input type="button" data-icon="" data-iconpos="top" value="Água" onclick="setCoordAgua()">
+        <input type="button" data-icon="" data-iconpos="top" value="Água" onclick="setCoord('agua')">
       </a>
-      <a href="#trash" data-transition="slide">
-        <input type="button" data-icon="" data-iconpos="top" value="Coleta de lixo" onclick="setCoordLixo()">
+      <a href="#trash" data-transition="fade">
+        <input type="button" data-icon="" data-iconpos="top" value="Coleta de lixo">
       </a>
       <a href="#sewer" data-transition="slide">
-        <input type="button" data-icon="" data-iconpos="top" value="Esgoto" onclick="setCoordEsgoto()">
+        <input type="button" data-icon="" data-iconpos="top" value="Esgoto" onclick="setCoord('esgoto')">
       </a>
     </div>
   </div>
@@ -54,10 +54,18 @@
       <h1>Asfalto</h1>
     </div>
     <div data-role="content">
-      <a href="#" class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-top">Coordenada inicial</a>
-      <a href="#" class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-top">Coordenada final</a>
-      <a href="#" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-top">Enviar</a>
-      <a href="#" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-top">Cancelar</a>
+      <form id="form-asfalto">
+        <input type="hidden" name="latitude_inicial" id="latitudeInicial">
+        <input type="hidden" name="longitude_inicial" id="longitudeInicial">
+
+        <input type="hidden" name="latitude_final" id="latitudeFinal">
+        <input type="hidden" name="longitude_final" id="longitudeFinal">
+        
+        <a href="#" class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-top" onclick="setCoordAsfaltIni();">Coordenada inicial</a>
+        <a href="#" class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-top" onclick="setCoordAsfaltFinal();">Coordenada final</a>
+        <a href="#" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-top" onclick="enviarFormAsfalto()">Enviar</a>
+        <a href="#" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-top">Cancelar</a>
+      </form>
     </div>
   </div>
   <div data-role="page" id="lighting" data-theme="a">
@@ -78,8 +86,11 @@
     </div>
     <div data-role="content">
       <form id="form-agua">
+        
         <input type="hidden" name="latitude" id="latAgua">
         <input type="hidden" name="longitude" id="longAgua">
+
+
         <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
           <legend>Possui água encanada na sua casa, nesse momento?</legend>
           <input type="radio" name="encanada" id="radio-choice-w-6a" value="1" checked="checked">
@@ -99,7 +110,7 @@
           <option value="0">Artesiano</option>
           <option value="1">Amazonas</option>
         </select>
-        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarForm()">Enviar</a>
+        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormAgua()">Enviar</a>
       </form>
     </div>
   </div>
@@ -108,34 +119,18 @@
   <div data-role="page" id="trash" data-theme="a">
     <div data-role="header" data-position="fixed">
       <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
-      <h1>Coleta de Lixo</h1>
+      <h1>Lixo</h1>
     </div>
     <div data-role="content">
       <form id="form-lixo">
         <input type="hidden" name="latitude" id="latLixo">
         <input type="hidden" name="longitude" id="longLixo">
 
-        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
-          <legend>Possui coleta de lixo na sua casa?</legend>
-          <input type="radio" name="coleta" id="radio-choice-w-6a" value="1" checked="checked">
-          <label for="radio-choice-w-6a">Sim</label>
-          <input type="radio" name="coleta" id="radio-choice-w-6b" value="0">
-          <label for="radio-choice-w-6b">Não</label>
-        </fieldset>
-
-        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
-          <legend>Com que frequencia?</legend>
-          <input type="radio" name="frequencia" id="radio-choice-w-6c" value="nenhuma" checked="checked">
-          <label for="radio-choice-w-6c">Nenhuma</label>
-          <input type="radio" name="frequencia" id="radio-choice-w-6d" value="diario" checked="checked">
-          <label for="radio-choice-w-6d">Diário</label>
-          <input type="radio" name="frequencia" id="radio-choice-w-6e" value="semanal">
-          <label for="radio-choice-w-6e">Semanal</label>
-          <input type="radio" name="frequencia" id="radio-choice-w-6f" value="mensal">
-          <label for="radio-choice-w-6f">Mensal</label>
-        </fieldset>
+        <input type="text" id="coleta">
+        <input type="text" id="frequencia">
         <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormLixo()">Enviar</a>
-      </form>
+      </form>  
+    
     </div>
   </div>
 
@@ -149,14 +144,17 @@
       <form id="form-esgoto">
         <input type="hidden" name="latitude" id="latEsgoto">
         <input type="hidden" name="longitude" id="longEsgoto">
+
         <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
-          <legend>Sua casa possui esgoto?</legend>
+          <legend>Sua casa possui coleta de esgoto?</legend>
           <input type="radio" name="esgoto" id="radio-choice-w-6a" value="1" checked="checked">
           <label for="radio-choice-w-6a">Sim</label>
           <input type="radio" name="esgoto" id="radio-choice-w-6b" value="0">
           <label for="radio-choice-w-6b">Não</label>
         </fieldset>
         <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormEsgoto()">Enviar</a>
+        <!--<a href="#" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-top">Sim</a>
+        <a href="#" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-top">Não</a>-->
       </form>
     </div>
   </div>
