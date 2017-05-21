@@ -45,6 +45,11 @@ function setCoord(x){
     navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
     $("#latEsgoto").val(latitude);
     $("#longEsgoto").val(longitude);
+    
+  }else if(x == "iluminacao"){
+    navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+    $("#latIlum").val(latitude);
+    $("#longIlum").val(longitude);
   }
 }
 
@@ -74,3 +79,10 @@ function freqColetaLixo(status){
   }
 }
 
+function iluminacao(status){
+  if (status=="habilitar"){
+    $("#lamp").show();
+  }else{
+    $("#lamp").hide();
+  }
+}

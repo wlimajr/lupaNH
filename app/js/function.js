@@ -88,3 +88,26 @@ function enviarFormEsgoto() {
         alert('erro');
     });
 }
+
+function enviarFormIluminacao() {
+    // o usuario disse que nao tem esgoto
+    if (document.getElementsByName('poste')[1].checked){
+        document.getElementById('ilumNull').checked = true;
+        
+    }
+    var dataForm = $("#form-iluminacao").serialize();
+    $.ajax({
+        url: url+"/iluminacao",
+        data: dataForm,
+        method: 'POST'
+    }).done(function (resposta) {
+        var teste = resposta;
+        if (resposta.status == "ok") {
+            alert(resposta.mensagem);
+        } else {
+            alert(resposta);
+        }
+    }).fail(function () {
+        alert("erro");
+    });
+}

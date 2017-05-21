@@ -33,7 +33,7 @@
         <input type="button" data-icon="" data-iconpos="top" value="Asfalto">
       </a>
       <a href="#lighting" data-transition="slide">
-        <input type="button" data-icon="" data-iconpos="top" value="Iluminação">
+        <input type="button" data-icon="" data-iconpos="top" value="Iluminação" onclick="setCoord('iluminacao')">
       </a>
       <a href="#water" data-transition="slide">
         <input type="button" data-icon="" data-iconpos="top" value="Água" onclick="setCoord('agua')">
@@ -74,7 +74,28 @@
       <h1>Iluminação</h1>
     </div>
     <div data-role="content">
-      lçjsadkfj
+      <form id="form-iluminacao">
+        <input type="hidden" name="latitude" id="latIlum">
+        <input type="hidden" name="longitude" id="longIlum">
+
+        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
+          <legend>Possui poste?</legend>
+          <input type="radio" name="poste" id="radio-choice-w-6a" value="1" checked="checked" onclick="iluminacao('habilitar');">
+          <label for="radio-choice-w-6a">Sim</label>
+          <input type="radio" name="poste" id="radio-choice-w-6b" value="0" onclick="iluminacao('desabilitar');">
+          <label for="radio-choice-w-6b">Não</label>
+        </fieldset>
+
+        <fieldset data-role="controlgroup" id="lamp" data-iconpos="right" data-theme="a">
+          <legend>Há iluminação?</legend>
+          <input type="radio" name="ilum" id="radio-choice-w-6c" value="1" checked="checked">
+          <label for="radio-choice-w-6c">Sim</label>
+          <input type="radio" name="ilum" id="radio-choice-w-6d" value="0">
+          <label for="radio-choice-w-6d">Não</label>
+          <input type="radio" name="poste" id="ilumNull" value="null" style="visibility:hidden;">
+        </fieldset>
+        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormIluminacao()">Enviar</a>
+      </form>
     </div>
   </div>
 
