@@ -10,6 +10,6 @@ CREATE TABLE `hiperlocal`.`asfalto` ( `id` INT NOT NULL AUTO_INCREMENT , `latitu
 
 CREATE TABLE `hiperlocal`.`esgoto` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(50) NOT NULL , `longitude` VARCHAR(50) NOT NULL , `esgoto` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
-CREATE TABLE `hiperlocal`.`iluminacao` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(50) NOT NULL , `longitude` VARCHAR(50) NOT NULL , `poste` INT NOT NULL , `lampada` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `hiperlocal`.`iluminacao` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(50) NOT NULL , `longitude` VARCHAR(50) NOT NULL , `poste` INT NOT NULL , `lampada` VARCHAR(4) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 CREATE TABLE `hiperlocal`.`lixo` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(50) NOT NULL , `longitude` VARCHAR(50) NOT NULL , `coleta` INT NOT NULL , `frequencia` VARCHAR(70) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
