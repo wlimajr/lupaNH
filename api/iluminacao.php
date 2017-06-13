@@ -62,9 +62,8 @@ class Iluminacao{
             "id" => $row['id'],
             "latitude" => $row['latitude'],
             "longitude" => $row['longitude'],
-            "encanada" => $row['encanada'],
-            "poco" => $row['poco'],
-            "tipo_poco" => $row['tipo_poco']
+            "poste" => $row['poste'],
+            "lampada" => $row['lampada']
         );
 
         return $denuncia;

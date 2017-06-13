@@ -62,9 +62,8 @@ class Lixo{
             "id" => $row['id'],
             "latitude" => $row['latitude'],
             "longitude" => $row['longitude'],
-            "encanada" => $row['encanada'],
-            "poco" => $row['poco'],
-            "tipo_poco" => $row['tipo_poco']
+            "coleta" => $row['coleta'],
+            "frequencia" => $row['frequencia']
         );
 
         return $denuncia;
