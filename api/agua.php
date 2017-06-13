@@ -4,7 +4,7 @@ class Agua{
 
     public static function adicionar($latitude, $longitude, $encanada, $poco, $tipoPoco){
          try{
-            require_once('dados_banco.php');
+            require_once('bd.php');
             $sql = "insert into agua (latitude, longitude, encanada, poco, tipo_poco) values (:latitude, :longitude, :encanada, :poco, :tipo_poco)";
             $p_sql = new PDO ($dados_banco['host'],$dados_banco['usuario'], $dados_banco['senha'], array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -32,7 +32,7 @@ class Agua{
     
     public static function consultar(){
         try{
-            require_once('dados_banco.php');
+            require_once('bd.php');
             $sql = "select * from agua";
             $p_sql = new PDO ($dados_banco['host'],$dados_banco['usuario'], $dados_banco['senha'], array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

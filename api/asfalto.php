@@ -4,7 +4,7 @@ class Asfalto{
 
 	public static function adicionar($latitudeInicial, $longitudeInicial, $latitudeFinal, $longitudeFinal){
 		try{
-            require_once('dados_banco.php');
+            require_once('bd.php');
             $sql = "insert into asfalto (latitude_inicial, longitude_inicial, latitude_final, longitude_final) values (:latitudeInicial, :longitudeInicial, :latitudeFinal, :longitudeFinal)";
             $p_sql = new PDO ($dados_banco['host'],$dados_banco['usuario'], $dados_banco['senha'], array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -31,7 +31,7 @@ class Asfalto{
 
     public static function consultar(){
         try{
-            require_once('dados_banco.php');
+            require_once('bd.php');
             $sql = "select * from asfalto";
             $p_sql = new PDO ($dados_banco['host'],$dados_banco['usuario'], $dados_banco['senha'], array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

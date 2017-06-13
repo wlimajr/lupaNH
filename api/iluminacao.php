@@ -4,7 +4,7 @@ class Iluminacao{
 
     public static function adicionar($latitude, $longitude, $poste, $lampada){
          try{
-            require_once('dados_banco.php');
+            require_once('bd.php');
             $sql = "insert into iluminacao (latitude, longitude, poste, lampada) values (:latitude, :longitude, :poste, :lampada)";
             $p_sql = new PDO ($dados_banco['host'],$dados_banco['usuario'], $dados_banco['senha'], array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -31,7 +31,7 @@ class Iluminacao{
     
     public static function consultar(){
         try{
-            require_once('dados_banco.php');
+            require_once('bd.php');
             $sql = "select * from iluminacao";
             $p_sql = new PDO ($dados_banco['host'],$dados_banco['usuario'], $dados_banco['senha'], array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -4,7 +4,7 @@ class Esgoto{
 
 	public static function adicionar($latitude, $longitude, $esgoto){
          try{
-            require_once('dados_banco.php');
+            require_once('bd.php');
             $sql = "insert into esgoto (latitude, longitude, esgoto) values (:latitude, :longitude, :esgoto)";
             $p_sql = new PDO ($dados_banco['host'],$dados_banco['usuario'], $dados_banco['senha'], array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -31,7 +31,7 @@ class Esgoto{
     
     public static function consultar(){
         try{
-            require_once('dados_banco.php');
+            require_once('bd.php');
             $sql = "select * from esgoto";
             $p_sql = new PDO ($dados_banco['host'],$dados_banco['usuario'], $dados_banco['senha'], array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
