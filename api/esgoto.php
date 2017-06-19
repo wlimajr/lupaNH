@@ -62,9 +62,7 @@ class Esgoto{
             "id" => $row['id'],
             "latitude" => $row['latitude'],
             "longitude" => $row['longitude'],
-            "encanada" => $row['encanada'],
-            "poco" => $row['poco'],
-            "tipo_poco" => $row['tipo_poco']
+            "esgoto" => $row['esgoto']
         );
 
         return $denuncia;

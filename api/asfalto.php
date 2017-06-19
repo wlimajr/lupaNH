@@ -60,11 +60,10 @@ class Asfalto{
     public static function montar($row){
         $denuncia = array(
             "id" => $row['id'],
-            "latitude" => $row['latitude'],
-            "longitude" => $row['longitude'],
-            "encanada" => $row['encanada'],
-            "poco" => $row['poco'],
-            "tipo_poco" => $row['tipo_poco']
+            "latitude_inicial" => $row['latitude_inicial'],
+            "longitude_inicial" => $row['longitude_inicial'],
+            "latitude_final" => $row['latitude_final'],
+            "longitude_final" => $row['longitude_final']
         );
 
         return $denuncia;
