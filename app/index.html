@@ -121,16 +121,27 @@
         </fieldset>
         <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
           <legend>Possui poço na sua casa?</legend>
-          <input type="radio" name="poco" id="radio-choice-w-61" value="1" checked="checked">
+          <input type="radio" name="poco" id="radio-choice-w-61" value="1" checked="checked" onclick="unablePoco('habilitar')">
           <label for="radio-choice-w-61">Sim</label>
-          <input type="radio" name="poco" id="radio-choice-w-62" value="0">
+          <input type="radio" name="poco" id="radio-choice-w-62" value="0" onclick="unablePoco('desabilitar')">
           <label for="radio-choice-w-62">Não</label>
         </fieldset>
-        <label for="select-choice-1" class="select">Selecione um tipo de poço</label>
-        <select name="tipo_poco" id="select-choice-1">
-          <option value="0">Artesiano</option>
-          <option value="1">Amazonas</option>
-        </select>
+        <!--<fieldset data-role="controlgroup" data-iconpos="right" data-theme="a" id="teste">
+          <label for="select-choice-1" class="select">Selecione um tipo de poço</label>
+          <select name="tipo_poco" id="tipo_poco">
+            <option value="0">Artesiano</option>
+            <option value="1">Amazonas</option>
+            <option value="null">null</option>
+          </select>
+        </fieldset>-->
+        <fieldset data-role="controlgroup" id="teste" data-iconpos="right" data-theme="a">
+          <legend>Selecione um tipo de poço:</legend>
+          <input type="radio" name="tipo_poco" id="radio-choice-v-2a" value="0" checked="checked">
+          <label for="radio-choice-v-2a">Artesiano</label>
+          <input type="radio" name="tipo_poco" id="radio-choice-v-2b" value="1">
+          <label for="radio-choice-v-2b">Amazonas</label>
+          <input type="radio" name="tipo_poco" id="dispoco" value="null" style="visibility:hidden;"> 
+        </fieldset>
         <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormAgua()">Enviar</a>
       </form>
     </div>

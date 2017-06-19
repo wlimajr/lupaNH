@@ -4,12 +4,12 @@ tips:
 tipo_poco 0 = artesiano
 tipo_poco 1= amazonas
 
-CREATE TABLE `hiperlocal`.`agua` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(50) NOT NULL , `longitude` VARCHAR(50) NOT NULL , `encanada` INT NOT NULL , `poco` INT NOT NULL , `tipo_poco` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `lupanh`.`agua` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(50) NOT NULL , `longitude` VARCHAR(50) NOT NULL , `encanada` INT NOT NULL , `poco` INT NOT NULL , `tipo_poco` VARCHAR(4) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
-CREATE TABLE `hiperlocal`.`asfalto` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude_inicial` VARCHAR(50) NOT NULL , `longitude_inicial` VARCHAR(50) NOT NULL , `latitude_final` VARCHAR(50) NOT NULL , `longitude_final` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `lupanh`.`asfalto` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude_inicial` VARCHAR(50) NOT NULL , `longitude_inicial` VARCHAR(50) NOT NULL , `latitude_final` VARCHAR(50) NOT NULL , `longitude_final` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
-CREATE TABLE `hiperlocal`.`esgoto` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(50) NOT NULL , `longitude` VARCHAR(50) NOT NULL , `esgoto` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `lupanh`.`esgoto` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(50) NOT NULL , `longitude` VARCHAR(50) NOT NULL , `esgoto` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
-CREATE TABLE `hiperlocal`.`iluminacao` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(50) NOT NULL , `longitude` VARCHAR(50) NOT NULL , `poste` INT NOT NULL , `lampada` VARCHAR(4) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `lupanh`.`iluminacao` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(50) NOT NULL , `longitude` VARCHAR(50) NOT NULL , `poste` INT NOT NULL , `lampada` VARCHAR(4) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
-CREATE TABLE `hiperlocal`.`lixo` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(50) NOT NULL , `longitude` VARCHAR(50) NOT NULL , `coleta` INT NOT NULL , `frequencia` VARCHAR(70) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `lupanh`.`lixo` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(50) NOT NULL , `longitude` VARCHAR(50) NOT NULL , `coleta` INT NOT NULL , `frequencia` VARCHAR(70) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;

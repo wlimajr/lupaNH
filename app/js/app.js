@@ -1,5 +1,6 @@
 function onBodyLoad() {
   document.addEventListener("deviceready", onDeviceReady, false);
+  $('#teste').html($('#teste').html().split('&nbsp;').join(''));
 }
 function onDeviceReady() {
   var attachFastClick = Origami.fastclick;
@@ -66,11 +67,6 @@ function setCoordAsfaltFinal(){
   $("#longitudeFinal").val(longitude);
 }
 
-function setCoordEsgoto() {
-  $("#latEsgoto").val(latitude);
-  $("#longEsgoto").val(longitude);
-}
-
 function freqColetaLixo(status){
   if (status=='habilitar'){
     $('#frequenciaColetaLixo').show();
@@ -84,5 +80,13 @@ function iluminacao(status){
     $("#lamp").show();
   }else{
     $("#lamp").hide();
+  }
+}
+
+function unablePoco(status){
+  if (status=="habilitar"){
+    $("#teste").show();
+  }else{
+    $("#teste").hide();
   }
 }

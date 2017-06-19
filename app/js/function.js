@@ -25,10 +25,13 @@ function enviarFormAsfalto() {
 }
 
 function enviarFormAgua() {
+    if (document.getElementsByName('poco')[1].checked){
+        document.getElementById('dispoco').checked = true;
+    }
     var dataForm = $("#form-agua").serialize();
     $.ajax({
 
-        url: url + "/agua",
+        url: "http://walterlima.tempsite.ws/LUPANH/api/agua",
         data: dataForm,
         method: 'POST'
         // beforeSend: function () {
