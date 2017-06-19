@@ -4,7 +4,7 @@ da pra colocar um item em cada formulario somente pra identificar pra onde deve 
 */
 
 // função para enviar formulário de água
-var url = "http://localhost/LUPANH/api";
+var url = "http://walterlima.tempsite.ws/LUPANH/api";
 
 function enviarFormAsfalto() {
     var dataForm = $("#form-asfalto").serialize();
@@ -31,7 +31,7 @@ function enviarFormAgua() {
     var dataForm = $("#form-agua").serialize();
     $.ajax({
 
-        url: "http://walterlima.tempsite.ws/LUPANH/api/agua",
+        url: url + "/agua",
         data: dataForm,
         method: 'POST'
         // beforeSend: function () {
