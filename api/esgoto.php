@@ -40,13 +40,13 @@ class Esgoto{
             $call->execute();
             $dados = array();
             while($row = $call->fetch(PDO::FETCH_ASSOC)){
-                $dados[] = Self::montar($row);
+                $dados[] = self::montar($row);
             }
             $resposta = array(
                 "status" => "ok",
                 "dados" => $dados
             );
-            echo json_encode($resposta, JSON_UNESCAPED_UNICODE);
+            echo json_encode($resposta, 256);
             
         }catch (Exception $e){
             $resposta = array(
