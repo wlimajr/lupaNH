@@ -24,24 +24,24 @@
 
   <!--página home-->
 
-  <div data-role="page" id="home" data-theme="b">
+  <div data-role="page" id="home" data-theme="a">
     <div data-role="header" data-position="fixed">
       <h1>Home</h1>
     </div>
     <div data-role="content">
-      <a href="#asphalt" data-transition="slide">
+      <a href="#asphalt" data-transition="fade">
         <input type="button" data-icon="" data-iconpos="top" value="Asfalto">
       </a>
-      <a href="#lighting" data-transition="slide">
+      <a href="#lighting" data-transition="fade">
         <input type="button" data-icon="" data-iconpos="top" value="Iluminação" onclick="setCoord('iluminacao')">
       </a>
-      <a href="#water" data-transition="slide">
+      <a href="#water" data-transition="fade">
         <input type="button" data-icon="" data-iconpos="top" value="Água" onclick="setCoord('agua')">
       </a>
       <a href="#trash" data-transition="fade">
         <input type="button" data-icon="" data-iconpos="top" value="Coleta de lixo" onclick="setCoord('lixo')">
       </a>
-      <a href="#sewer" data-transition="slide">
+      <a href="#sewer" data-transition="fade">
         <input type="button" data-icon="" data-iconpos="top" value="Esgoto" onclick="setCoord('esgoto')">
       </a>
     </div>
@@ -168,12 +168,12 @@
 
         <fieldset data-role="controlgroup" id="frequenciaColetaLixo" data-iconpos="right" data-theme="a">
           <legend>Com que frequencia?</legend>
-          <input type="radio" name="frequencia" id="radio-choice-w-6c" value="diario" checked="checked">
-          <label for="radio-choice-w-6c">Diario</label>
-          <input type="radio" name="frequencia" id="radio-choice-w-6d" value="semanal">
-          <label for="radio-choice-w-6d">Semanal</label>
-          <input type="radio" name="frequencia" id="radio-choice-w-6e" value="mensal">
-          <label for="radio-choice-w-6e">Mensal</label>
+          <input type="radio" name="frequencia" id="radio-choice-w-6cc" value="diario" checked="checked">
+          <label for="radio-choice-w-6cc">Diario</label>
+          <input type="radio" name="frequencia" id="radio-choice-w-6dd" value="semanal">
+          <label for="radio-choice-w-6dd">Semanal</label>
+          <input type="radio" name="frequencia" id="radio-choice-w-6ee" value="mensal">
+          <label for="radio-choice-w-6ee">Mensal</label>
           <input type="radio" name="frequencia" id="frequenciaNull" value="null" style="visibility:hidden;">
         </fieldset>
         <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormLixo()">Enviar</a>
