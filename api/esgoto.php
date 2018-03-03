@@ -2,10 +2,10 @@
 
 class Esgoto{
 
-	public static function adicionar($latitude, $longitude, $esgoto){
+	public static function adicionar($latitude, $longitude, $esgoto, $fossa){
          try{
             require_once('bd.php');
-            $sql = "insert into esgoto (latitude, longitude, esgoto) values (:latitude, :longitude, :esgoto)";
+            $sql = "insert into esgoto (latitude, longitude, esgoto, fossa) values (:latitude, :longitude, :esgoto, :fossa)";
             $p_sql = new PDO ($dados_banco['host'],$dados_banco['usuario'], $dados_banco['senha'], array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $p_sql->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
@@ -13,6 +13,7 @@ class Esgoto{
             $call->bindValue(':latitude', $latitude);
             $call->bindValue(':longitude', $longitude);
             $call->bindValue(':esgoto', $esgoto);
+            $call->bindValue(':fossa', $fossa);
             $call->execute();
             $resposta = array(
                 "status" => "ok",
@@ -62,7 +63,8 @@ class Esgoto{
             "id" => $row['id'],
             "latitude" => $row['latitude'],
             "longitude" => $row['longitude'],
-            "esgoto" => $row['esgoto']
+            "esgoto" => $row['esgoto'],
+            "fossa" => $row['fossa']
         );
 
         return $denuncia;

@@ -20,7 +20,7 @@
 
 </head>
 
-<body onload="navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);">
+<body onload="navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo)">
 
   <!--página home-->
 
@@ -29,20 +29,20 @@
       <h1>Home</h1>
     </div>
     <div data-role="content">
-      <a href="#asphalt" data-transition="fade">
+      <!-- <a href="#asphalt" data-transition="fade">
         <input type="button" data-icon="" data-iconpos="top" value="Asfalto">
-      </a>
+      </a> -->
       <a href="#lighting" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Iluminação" onclick="setCoord('iluminacao')">
+        <input type="button" data-icon="" data-iconpos="top" value="Iluminação" onclick="setCoordIluminacao()">
       </a>
       <a href="#water" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Água" onclick="setCoord('agua')">
+        <input type="button" data-icon="" data-iconpos="top" value="Água" onclick="setCoordAgua()">
       </a>
       <a href="#trash" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Coleta de lixo" onclick="setCoord('lixo')">
+        <input type="button" data-icon="" data-iconpos="top" value="Coleta de lixo" onclick="setCoordLixo()">
       </a>
       <a href="#sewer" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Esgoto" onclick="setCoord('esgoto')">
+        <input type="button" data-icon="" data-iconpos="top" value="Esgoto" onclick="setCoordEsgoto()">
       </a>
     </div>
   </div>
@@ -50,7 +50,8 @@
   <!--pagina de asfaltos-->
   <div data-role="page" id="asphalt" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
+      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"
+        onclick="  "></a>
       <h1>Asfalto</h1>
     </div>
     <div data-role="content">
@@ -60,7 +61,7 @@
 
         <input type="hidden" name="latitude_final" id="latitudeFinal">
         <input type="hidden" name="longitude_final" id="longitudeFinal">
-        
+
         <a href="#" class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-top" onclick="setCoordAsfaltIni();">Coordenada inicial</a>
         <a href="#" class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-top" onclick="setCoordAsfaltFinal();">Coordenada final</a>
         <a href="#" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-top" onclick="enviarFormAsfalto()">Enviar</a>
@@ -70,7 +71,8 @@
   </div>
   <div data-role="page" id="lighting" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
+      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"
+        onclick="  "></a>
       <h1>Iluminação</h1>
     </div>
     <div data-role="content">
@@ -87,7 +89,7 @@
         </fieldset>
 
         <fieldset data-role="controlgroup" id="lamp" data-iconpos="right" data-theme="a">
-          <legend>Há iluminação?</legend>
+          <legend>As luzes estão funcionando?</legend>
           <input type="radio" name="lampada" id="radio-choice-w-6c" value="1" checked="checked">
           <label for="radio-choice-w-6c">Sim</label>
           <input type="radio" name="lampada" id="radio-choice-w-6d" value="0">
@@ -102,45 +104,54 @@
   <!--página água-->
   <div data-role="page" id="water" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
+      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"
+        onclick="  "></a>
       <h1>Água</h1>
     </div>
     <div data-role="content">
       <form id="form-agua">
-        
+
         <input type="hidden" name="latitude" id="latAgua">
         <input type="hidden" name="longitude" id="longAgua">
 
 
         <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
           <legend>Possui água encanada na sua casa, nesse momento?</legend>
-          <input type="radio" name="encanada" id="radio-choice-w-6a" value="1" checked="checked">
-          <label for="radio-choice-w-6a">Sim</label>
-          <input type="radio" name="encanada" id="radio-choice-w-6b" value="0">
-          <label for="radio-choice-w-6b">Não</label>
+          <input type="radio" name="encanada" id="radio-choice-w-6e" value="1" checked="checked">
+          <label for="radio-choice-w-6e">Sim</label>
+          <input type="radio" name="encanada" id="radio-choice-w-6f" value="0">
+          <label for="radio-choice-w-6f">Não</label>
+        </fieldset>
+        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
+          <legend>Quantos dias da semana falta água na sua casa?</legend>
+          <select name="falta" id="falta" data-theme="a">
+            <option value="0">Não falta</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
         </fieldset>
         <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
           <legend>Possui poço na sua casa?</legend>
-          <input type="radio" name="poco" id="radio-choice-w-61" value="1" checked="checked" onclick="unablePoco('habilitar')">
-          <label for="radio-choice-w-61">Sim</label>
-          <input type="radio" name="poco" id="radio-choice-w-62" value="0" onclick="unablePoco('desabilitar')">
-          <label for="radio-choice-w-62">Não</label>
+          <input type="radio" name="poco" id="radio-choice-w-6g" value="1" checked="checked" onclick="unablePoco('habilitar')">
+          <label for="radio-choice-w-6g">Sim</label>
+          <input type="radio" name="poco" id="radio-choice-w-6h" value="0" onclick="unablePoco('desabilitar')">
+          <label for="radio-choice-w-6h">Não</label>
         </fieldset>
-        <!--<fieldset data-role="controlgroup" data-iconpos="right" data-theme="a" id="teste">
-          <label for="select-choice-1" class="select">Selecione um tipo de poço</label>
-          <select name="tipo_poco" id="tipo_poco">
-            <option value="0">Artesiano</option>
-            <option value="1">Amazonas</option>
-            <option value="null">null</option>
-          </select>
-        </fieldset>-->
         <fieldset data-role="controlgroup" id="teste" data-iconpos="right" data-theme="a">
           <legend>Selecione um tipo de poço:</legend>
-          <input type="radio" name="tipo_poco" id="radio-choice-v-2a" value="0" checked="checked">
-          <label for="radio-choice-v-2a">Artesiano</label>
-          <input type="radio" name="tipo_poco" id="radio-choice-v-2b" value="1">
-          <label for="radio-choice-v-2b">Amazonas</label>
-          <input type="radio" name="tipo_poco" id="dispoco" value="null" style="visibility:hidden;"> 
+        
+          <input type="radio" name="tipo_poco" id="radio-choice-v-2a" value="0" checked="checked">
+          <label for="radio-choice-v-2a">Artesiano</label>
+        
+          <input type="radio" name="tipo_poco" id="radio-choice-v-2b" value="1">
+          <label for="radio-choice-v-2b">Amazonas</label>
+        
+          <input type="radio" name="tipo_poco" id="dispoco" value="null" style="visibility:hidden;">
         </fieldset>
         <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormAgua()">Enviar</a>
       </form>
@@ -150,7 +161,8 @@
   <!--página de lixo-->
   <div data-role="page" id="trash" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
+      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"
+        onclick="  "></a>
       <h1>Lixo</h1>
     </div>
     <div data-role="content">
@@ -160,32 +172,35 @@
 
         <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
           <legend>Possui coleta de lixo na sua casa?</legend>
-          <input type="radio" name="coleta" id="radio-choice-w-6a" value="1" checked="checked" onclick="freqColetaLixo('habilitar');">
-          <label for="radio-choice-w-6a">Sim</label>
-          <input type="radio" name="coleta" id="radio-choice-w-6b" value="0" onclick="freqColetaLixo('desabilitar');">
-          <label for="radio-choice-w-6b">Não</label>
+          <input type="radio" name="coleta" id="radio-choice-w-6i" value="1" checked="checked" onclick="freqColetaLixo('habilitar');">
+          <label for="radio-choice-w-6i">Sim</label>
+          <input type="radio" name="coleta" id="radio-choice-w-6j" value="0" onclick="freqColetaLixo('desabilitar');">
+          <label for="radio-choice-w-6j">Não</label>
         </fieldset>
 
         <fieldset data-role="controlgroup" id="frequenciaColetaLixo" data-iconpos="right" data-theme="a">
           <legend>Com que frequencia?</legend>
-          <input type="radio" name="frequencia" id="radio-choice-w-6cc" value="diario" checked="checked">
+          <input type="radio" name="frequencia" id="radio-choice-w-6cc" value="diario" checked="checked" />
           <label for="radio-choice-w-6cc">Diario</label>
-          <input type="radio" name="frequencia" id="radio-choice-w-6dd" value="semanal">
+          <input type="radio" name="frequencia" id="radio-choice-w-6bb" value="trial" />
+          <label for="radio-choice-w-6bb">3x p/ semana</label>
+          <input type="radio" name="frequencia" id="radio-choice-w-6dd" value="semanal" />
           <label for="radio-choice-w-6dd">Semanal</label>
           <input type="radio" name="frequencia" id="radio-choice-w-6ee" value="mensal">
           <label for="radio-choice-w-6ee">Mensal</label>
           <input type="radio" name="frequencia" id="frequenciaNull" value="null" style="visibility:hidden;">
         </fieldset>
         <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormLixo()">Enviar</a>
-      </form>  
-    
+      </form>
+
     </div>
   </div>
 
   <!--página de esgoto-->
   <div data-role="page" id="sewer" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"></a>
+      <a href="#services" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-carat-l ui-btn-icon-notext ui-btn-left"
+        onclick="  "></a>
       <h1>Esgoto</h1>
     </div>
     <div data-role="content">
@@ -195,10 +210,18 @@
 
         <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
           <legend>Sua casa possui coleta de esgoto?</legend>
-          <input type="radio" name="esgoto" id="radio-choice-w-6a" value="1" checked="checked">
-          <label for="radio-choice-w-6a">Sim</label>
-          <input type="radio" name="esgoto" id="radio-choice-w-6b" value="0">
-          <label for="radio-choice-w-6b">Não</label>
+          <input type="radio" name="esgoto" id="radio-choice-w-6k" value="1" checked="checked">
+          <label for="radio-choice-w-6k">Sim</label>
+          <input type="radio" name="esgoto" id="radio-choice-w-6l" value="0">
+          <label for="radio-choice-w-6l">Não</label>
+        </fieldset>
+
+        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
+          <legend>Sua casa possui fossa?</legend>
+          <input type="radio" name="fossa" id="radio-choice-w-6m" value="1" checked="checked">
+          <label for="radio-choice-w-6m">Sim</label>
+          <input type="radio" name="fossa" id="radio-choice-w-6n" value="0">
+          <label for="radio-choice-w-6n">Não</label>
         </fieldset>
         <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormEsgoto()">Enviar</a>
         <!--<a href="#" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-top">Sim</a>

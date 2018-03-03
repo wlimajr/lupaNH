@@ -31,62 +31,73 @@ function onErrorGeo(error) {
 }
 
 
-function setCoord(x){
-  if (x == "agua"){
-    navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
-    $("#latAgua").val(latitude);
-    $("#longAgua").val(longitude);
-    
-  }else if(x == "lixo"){
-    navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
-    $("#latLixo").val(latitude);
-    $("#longLixo").val(longitude);
-
-  }else if(x == "esgoto"){
-    navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
-    $("#latEsgoto").val(latitude);
-    $("#longEsgoto").val(longitude);
-    
-  }else if(x == "iluminacao"){
-    navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
-    $("#latIlum").val(latitude);
-    $("#longIlum").val(longitude);
-  }
+function setCoordIluminacao() {
+  // latitude = '';
+  // longitude = '';
+  navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+  $("#latIlum").val(latitude);
+  $("#longIlum").val(longitude);
 }
 
+function setCoordAgua() {
+  // latitude = '';
+  // longitude = '';
+  navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+  $("#latAgua").val(latitude);
+  $("#longAgua").val(longitude);
+}
+function setCoordLixo() {
+  // latitude = '';
+  // longitude = '';
+  navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+  $("#latLixo").val(latitude);
+  $("#longLixo").val(longitude);
+
+}
+function setCoordEsgoto() {
+  // latitude = '';
+  // longitude = '';
+  navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
+  $("#latEsgoto").val(latitude);
+  $("#longEsgoto").val(longitude);
+
+}
+
+
+
 //função para setar as coordenadas form-asfalto
-function setCoordAsfaltIni(){
+function setCoordAsfaltIni() {
   navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
   $("#latitudeInicial").val(latitude);
   $("#longitudeInicial").val(longitude);
 }
 
-function setCoordAsfaltFinal(){
+function setCoordAsfaltFinal() {
   navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
   $("#latitudeFinal").val(latitude);
   $("#longitudeFinal").val(longitude);
 }
 
-function freqColetaLixo(status){
-  if (status=='habilitar'){
+function freqColetaLixo(status) {
+  if (status == 'habilitar') {
     $('#frequenciaColetaLixo').show();
-  }else{
+  } else {
     $('#frequenciaColetaLixo').hide();
   }
 }
 
-function iluminacao(status){
-  if (status=="habilitar"){
+function iluminacao(status) {
+  if (status == "habilitar") {
     $("#lamp").show();
-  }else{
+  } else {
     $("#lamp").hide();
   }
 }
 
-function unablePoco(status){
-  if (status=="habilitar"){
+function unablePoco(status) {
+  if (status == "habilitar") {
     $("#teste").show();
-  }else{
+  } else {
     $("#teste").hide();
   }
 }

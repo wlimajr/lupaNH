@@ -23,10 +23,11 @@ switch ($method) {
 				$latitude = addslashes($_POST['latitude']);
 				$longitude = addslashes($_POST['longitude']);
 				$encanada = addslashes($_POST['encanada']);
+				$falta = addslashes($_POST['falta']);
 				$poco = addslashes($_POST['poco']);
 				$tipoPoco = addslashes($_POST['tipo_poco']);
 
-				Agua::adicionar($latitude, $longitude, $encanada, $poco, $tipoPoco);
+				Agua::adicionar($latitude, $longitude, $encanada,$falta, $poco, $tipoPoco);
 
 				break;
 				
@@ -45,8 +46,8 @@ switch ($method) {
 				$latitude = addslashes($_POST['latitude']);
 				$longitude = addslashes($_POST['longitude']);
 				$esgoto = addslashes($_POST['esgoto']);
-
-				Esgoto::adicionar($latitude, $longitude, $esgoto);
+				$fossa = addslashes($_POST['fossa']);
+				Esgoto::adicionar($latitude, $longitude, $fossa, $esgoto);
 
 				break;
 				

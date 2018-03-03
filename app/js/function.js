@@ -4,25 +4,25 @@ da pra colocar um item em cada formulario somente pra identificar pra onde deve 
 */
 
 // função para enviar formulário de água
-var url = "http://walterlima.tempsite.ws/LUPANH/api";
+var url = "http://lupanh.000webhostapp.com/LUPANH/api";
 
-function enviarFormAsfalto() {
-    var dataForm = $("#form-asfalto").serialize();
-    $.ajax({
-        url: url + "/asfalto",
-        data: dataForm,
-        method: 'POST'
-    }).done(function (resposta) {
-        if (resposta.status == "ok") {
-            asdf = resposta;
-            alert(resposta.mensagem);
-        } else {
-            alert(resposta);
-        }
-    }).fail(function () {
-        alert("erro");
-    });
-}
+// function enviarFormAsfalto() {
+//     var dataForm = $("#form-asfalto").serialize();
+//     $.ajax({
+//         url: url + "/asfalto",
+//         data: dataForm,
+//         method: 'POST'
+//     }).done(function (resposta) {
+//         if (resposta.status == "ok") {
+//             asdf = resposta;
+//             alert(resposta.mensagem);
+//         } else {
+//             alert(resposta);
+//         }
+//     }).fail(function () {
+//         alert("erro");
+//     });
+// }
 
 function enviarFormAgua() {
     if (document.getElementsByName('poco')[1].checked){
@@ -44,7 +44,7 @@ function enviarFormAgua() {
             alert(resposta.mensagem);
         }
     }).fail(function () {
-        alert("erro");
+        alert("erro tente");
     });
 }
 
@@ -77,7 +77,7 @@ function enviarFormEsgoto() {
     console.log(dataForm);
     $.ajax({
 
-        url: url + "/esgoto",
+        url: url+"/esgoto",
         data: dataForm,
         method: 'POST',
     }).done(function(resposta) {

@@ -1,93 +1,81 @@
 var map;
 var infowindow = new google.maps.InfoWindow();
+var url = "http://lupanh.000webhostapp.com/LUPANH/api";
 var jsonLixo;
 var jsonAgua;
 var jsonIlum;
 var jsonEsg;
 
-$.getJSON("http://localhost/LUPANH/api/lixo").done(function (response) {
-    jsonLixo = response.dados;
-});
 
-$.getJSON("http://localhost/LUPANH/api/agua").done(function (response) {
-    jsonAgua = response.dados;
-});
-
-$.getJSON("http://localhost/LUPANH/api/iluminacao").done(function (response) {
-    jsonIlum = response.dados;
-});
-
-$.getJSON("http://localhost/LUPANH/api/esgoto").done(function (response) {
-    jsonEsg = response.dados;
-});
-
-function initialize() {
-
-    var mapProp = {
-        center: new google.maps.LatLng(0.1021154,-51.2369497), //MACAPA
-        zoom: 7,
+window.initMap = () => {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 0.1021154, lng: -51.2369497 },
+        zoom: 8,
         mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    map = new google.maps.Map(document.getElementById("map"), mapProp);
-
-    $.each(jsonLixo, function (key, data) {
-
-        var latLng = new google.maps.LatLng(data.latitude, data.longitude);
-
-        var marker = new google.maps.Marker({
-            position: latLng,
-            map: map,
-            icon: "img/trash.png",
-            // title: data.title
-        });
-
-        // var details = data.website + ", " + data.phone + ".";
-
-        // bindInfoWindow(marker, map, infowindow, details);
-
-        //    });
-
     });
 
-    $.each(jsonAgua, function (key, data) {
-        var latLng = new google.maps.LatLng(data.latitude, data.longitude);
 
-        var marker = new google.maps.Marker({
-            position: latLng,
-            map: map,
-            icon: "img/water.png",
-        });
+    $.getJSON(url + '/lixo').done(function (response) {
+        jsonLixo = response.dados;
+        for (let i = 0; i < jsonLixo.length; i++) {
+            var lat = jsonLixo[i].latitude;
+            var long = jsonLixo[i].longitude;
+            var latLng = new google.maps.LatLng(lat, long);
+            var marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                icon: "img/trash.png",
+            });
+        }
     });
 
-    $.each(jsonIlum, function (key, data) {
-        var latLng = new google.maps.LatLng(data.latitude, data.longitude);
+    $.getJSON(url + '/agua').done(function(response){
+        jsonAgua = response.dados;
+        for (let i = 0; i < jsonAgua.length; i++) {
+            var lat = jsonAgua[i].latitude;
+            var long = jsonAgua[i].longitude;
+            var latLng = new google.maps.LatLng(lat, long);
+            var marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                icon: 'img/water.png'
+            })
+            
+        }
+    })
 
-        var marker = new google.maps.Marker({
-            position: latLng,
-            map: map,
-            icon: "img/light.png",
-        });
+    $.getJSON(url + '/esgoto').done(function (response) {
+        jsonEsgoto = response.dados;
+        for (let i = 0; i < jsonEsgoto.length; i++) {
+            var lat = jsonEsgoto[i].latitude;
+            var long = jsonEsgoto[i].longitude;
+            var latLng = new google.maps.LatLng(lat, long);
+            var marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                icon: "img/sewer.png",
+            });
+        }
     });
 
-    $.each(jsonEsg, function (key, data) {
-        var latLng = new google.maps.LatLng(data.latitude, data.longitude);
-
-        var marker = new google.maps.Marker({
-            position: latLng,
-            map: map,
-            icon: "img/sewer.png",
-        });
-    });
+    $.getJSON(url + '/iuminacao').done(function(response){
+        jsonIlum = response.dados;
+        for (let i = 0; i < jsonIlum.length; i++) {
+            var lat = jsonIlum[i].latitude;
+            var long = jsonIlum[i].longitude;
+            var latLng = new google.maps.LatLng(lat, long);
+            var marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                icon: 'img/light.png'
+            })
+            
+        }
+    })
 
 
 }
 
-// function bindInfoWindow(marker, map, infowindow, strDescription) {
-//     google.maps.event.addListener(marker, 'click', function () {
-//         infowindow.setContent(strDescription);
-//         infowindow.open(map, marker);
-//     });
-// }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+
+google.maps.event.addDomListener(window, 'load', initMap);

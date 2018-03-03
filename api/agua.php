@@ -2,10 +2,10 @@
 
 class Agua{
 
-    public static function adicionar($latitude, $longitude, $encanada, $poco, $tipoPoco){
+    public static function adicionar($latitude, $longitude, $encanada, $falta, $poco, $tipoPoco){
          try{
             require_once('bd.php');
-            $sql = "insert into agua (latitude, longitude, encanada, poco, tipo_poco) values (:latitude, :longitude, :encanada, :poco, :tipo_poco)";
+            $sql = "insert into agua (latitude, longitude, encanada, falta, poco, tipo_poco) values (:latitude, :longitude, :encanada, :falta, :poco, :tipo_poco)";
             $p_sql = new PDO ($dados_banco['host'],$dados_banco['usuario'], $dados_banco['senha'], array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
             $p_sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $p_sql->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
@@ -13,6 +13,7 @@ class Agua{
             $call->bindValue(':latitude', $latitude);
             $call->bindValue(':longitude', $longitude);
             $call->bindValue(':encanada', $encanada);
+            $call->bindValue(':falta', $falta);
             $call->bindValue(':poco', $poco);
             $call->bindValue(':tipo_poco', $tipoPoco);
             $call->execute();
@@ -64,6 +65,7 @@ class Agua{
             "latitude" => $row['latitude'],
             "longitude" => $row['longitude'],
             "encanada" => $row['encanada'],
+            "falta" => $row['falta'],
             "poco" => $row['poco'],
             "tipo_poco" => $row['tipo_poco']
         );

@@ -8,19 +8,18 @@
     <!-- versionCode is optional and Android only -->
 	
 	<!--nome do app-->
-    <name>Teste Cam</name>
+    <name>Lupa</name>
 
 	<!--descrição-->
     <description>
-	Teste Cam
+	Aplicação para mapeamento de saneamento básico e iluminação pública no bairro do Novo Horizonte em Macapá.
     </description>
 
 	<!--autor-->
-    <author href="http://www.prodap.ap.gov.br" email="prodap.app@gmail.com">
+    <author href="https://lupanh.000webhostapp.com/LUPANH/front/" email="altemirap25@gmail.com">
 		Altemir Almeida
     </author>
 	  <platform name="android"/>
-	  <plugin name="cordova-plugin-camera" spec="2.3.1" source="npm"/>
   	  <plugin name="cordova-plugin-geolocation" spec="1.0.1" source="npm"/>
 
 	  <preference name="orientation" value="portrait" />
