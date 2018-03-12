@@ -45,6 +45,28 @@
         <input type="button" data-icon="" data-iconpos="top" value="Esgoto" onclick="setCoordEsgoto()">
       </a>
     </div>
+
+
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+      
+        <ul>
+        
+          <li>
+            <a href="http://lupanh.000webhostapp.com/LUPANH/front/" data-icon="star" class="ui-icon-myicon-site" target="_blank">Site</a>
+          </li>
+        
+          <li>
+            <a href="#" data-icon="star" class="ui-icon-myicon-fb" onclick="alert('Facebook')">Facebook</a>
+          </li>
+        
+          <li>
+            <a href="#" data-icon="gear" class="ui-icon-myicon-tw" onclick="alert('Twitter')">Twitter</a>
+          </li>
+          </ul>
+        </div>
+    </div>
   </div>
 
   <!--pagina de asfaltos-->
@@ -144,13 +166,13 @@
         </fieldset>
         <fieldset data-role="controlgroup" id="teste" data-iconpos="right" data-theme="a">
           <legend>Selecione um tipo de poço:</legend>
-        
+
           <input type="radio" name="tipo_poco" id="radio-choice-v-2a" value="0" checked="checked">
           <label for="radio-choice-v-2a">Artesiano</label>
-        
+
           <input type="radio" name="tipo_poco" id="radio-choice-v-2b" value="1">
           <label for="radio-choice-v-2b">Amazonas</label>
-        
+
           <input type="radio" name="tipo_poco" id="dispoco" value="null" style="visibility:hidden;">
         </fieldset>
         <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormAgua()">Enviar</a>
