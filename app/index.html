@@ -5,11 +5,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
-  <link rel="stylesheet" href="css/estilo.css" />
   <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
   <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
   <link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
   <link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.css">
+  <link rel="stylesheet" href="css/Lupanh.css">
+  <link rel="stylesheet" href="css/estilo.css" />
 
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/fastClick.js"></script>
@@ -26,41 +27,66 @@
 
   <div data-role="page" id="home" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <h1>Home</h1>
+      <h1>Aponte problemas</h1>
     </div>
     <div data-role="content">
       <!-- <a href="#asphalt" data-transition="fade">
         <input type="button" data-icon="" data-iconpos="top" value="Asfalto">
       </a> -->
-      <a href="#lighting" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Iluminação" onclick="setCoordIluminacao()">
-      </a>
-      <a href="#water" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Água" onclick="setCoordAgua()">
-      </a>
-      <a href="#trash" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Coleta de lixo" onclick="setCoordLixo()">
-      </a>
-      <a href="#sewer" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Esgoto" onclick="setCoordEsgoto()">
-      </a>
+      <div class="ui-grid-a button-row">
+        <div class="ui-block-a">
+          <a class="bubble-button" href="#lighting" data-transition="fade" onclick="setCoordIluminacao()">
+            <div>
+              <img src="css/images/001-light-bulb.svg" />
+            </div>
+          </a>
+          <span>Iluminação</span>
+        </div>
+        <div class="ui-block-b">
+          <a class="bubble-button" href="#water" data-transition="fade" onclick="setCoordAgua()">
+            <div>
+              <img src="css/images/004-drop.svg" />
+            </div>
+          </a>
+          <span>Água</span>
+        </div>
+      </div>
+      <div class="ui-grid-a button-row">
+        <div class="ui-block-a">
+          <a class="bubble-button" href="#trash" data-transition="fade" onclick="setCoordLixo()">
+            <div>
+              <img src="css/images/002-garbage.svg" />
+            </div>
+          </a>
+          <span>Coleta de Lixo</span>
+        </a>
+        </div>
+        <div class="ui-block-b">
+          <a class="bubble-button" href="#sewer" data-transition="fade" onclick="setCoordEsgoto()">
+            <div>
+              <img src="css/images/003-waste.svg" />
+            </div>
+          </a>
+          <span>Esgoto</span>
+        </div>
+      </div>
     </div>
 
 
 
     <div data-role="footer" data-position="fixed">
       <div data-role="navbar">
-      
+
         <ul>
-        
+
           <li>
             <a href="http://lupanh.000webhostapp.com/LUPANH/front/" data-icon="star" class="ui-icon-myicon-site" target="_blank">Site</a>
           </li>
-        
+
           <li>
             <a href="#" data-icon="star" class="ui-icon-myicon-fb" onclick="alert('Facebook')">Facebook</a>
           </li>
-        
+
           <li>
             <a href="#" data-icon="gear" class="ui-icon-myicon-tw" onclick="alert('Twitter')">Twitter</a>
           </li>
@@ -102,23 +128,27 @@
         <input type="hidden" name="latitude" id="latIlum">
         <input type="hidden" name="longitude" id="longIlum">
 
-        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
-          <legend>Possui poste?</legend>
-          <input type="radio" name="poste" id="radio-choice-w-6a" value="1" checked="checked" onclick="iluminacao('habilitar');">
-          <label for="radio-choice-w-6a">Sim</label>
-          <input type="radio" name="poste" id="radio-choice-w-6b" value="0" onclick="iluminacao('desabilitar');">
-          <label for="radio-choice-w-6b">Não</label>
-        </fieldset>
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
+            <legend>Possui poste?</legend>
+            <input type="radio" name="poste" id="radio-choice-w-6a" value="1" checked="checked" onclick="iluminacao('habilitar');">
+            <label for="radio-choice-w-6a">Sim</label>
+            <input type="radio" name="poste" id="radio-choice-w-6b" value="0" onclick="iluminacao('desabilitar');">
+            <label for="radio-choice-w-6b">Não</label>
+          </fieldset>
+        </div>
 
-        <fieldset data-role="controlgroup" id="lamp" data-iconpos="right" data-theme="a">
-          <legend>As luzes estão funcionando?</legend>
-          <input type="radio" name="lampada" id="radio-choice-w-6c" value="1" checked="checked">
-          <label for="radio-choice-w-6c">Sim</label>
-          <input type="radio" name="lampada" id="radio-choice-w-6d" value="0">
-          <label for="radio-choice-w-6d">Não</label>
-          <input type="radio" name="lampada" id="ilumNull" value="null" style="visibility:hidden;">
-        </fieldset>
-        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormIluminacao()">Enviar</a>
+        <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup" id="lamp" data-iconpos="right" data-theme="a">
+            <legend>As luzes estão funcionando?</legend>
+            <input type="radio" name="lampada" id="radio-choice-w-6c" value="1" checked="checked">
+            <label for="radio-choice-w-6c">Sim</label>
+            <input type="radio" name="lampada" id="radio-choice-w-6d" value="0">
+            <label for="radio-choice-w-6d">Não</label>
+            <input type="radio" name="lampada" id="ilumNull" value="null" style="visibility:hidden;">
+          </fieldset>
+          <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormIluminacao()">Enviar</a>
+        </div>
       </form>
     </div>
   </div>
