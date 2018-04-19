@@ -50,6 +50,26 @@ legend {
   padding: 5vw;
 }
 
+/* mesmo estilo de botão mas estático */
+.bubble-icon {
+  width: 40vw;
+  height: 40vw;
+  margin: auto;
+  border-radius: 50% !important;
+  border: 0.3em solid #F5BA39 !important;
+  background-color: #fff !important;
+}
+.bubble-icon + span {
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  padding-top: 0.5em;
+}
+.bubble-icon > img {
+  padding: 5vw;
+}
+
 /* encolhe linha de botões e arruma espaço vertical entre linhas */
 .button-row {
   width: 85vw;
