@@ -4,7 +4,7 @@ var url = "http://lupanh.000webhostapp.com/LUPANH/api";
 var jsonLixo;
 var jsonAgua;
 var jsonIlum;
-var jsonEsg;
+var jsonEsgoto;
 
 
 window.initMap = () => {
@@ -58,7 +58,7 @@ window.initMap = () => {
         }
     });
 
-    $.getJSON(url + '/iuminacao').done(function(response){
+    $.getJSON(url + '/iluminacao').done(function(response){
         jsonIlum = response.dados;
         for (let i = 0; i < jsonIlum.length; i++) {
             var lat = jsonIlum[i].latitude;
