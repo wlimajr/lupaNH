@@ -4,7 +4,7 @@ da pra colocar um item em cada formulario somente pra identificar pra onde deve 
 */
 
 // função para enviar formulário de água
-var url = "http://lupanh.000webhostapp.com/LUPANH/api";
+var url = "https://lupanh.labhacker.org.br/LUPANH/api";
 
 // function enviarFormAsfalto() {
 //     var dataForm = $("#form-asfalto").serialize();

@@ -5,11 +5,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
-  <link rel="stylesheet" href="css/estilo.css" />
   <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
   <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
   <link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
   <link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.css">
+  <link rel="stylesheet" href="css/Lupanh.css">
+  <link rel="stylesheet" href="css/estilo.css" />
 
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/fastClick.js"></script>
@@ -26,41 +27,66 @@
 
   <div data-role="page" id="home" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <h1>Home</h1>
+      <h1>Aponte problemas</h1>
     </div>
     <div data-role="content">
       <!-- <a href="#asphalt" data-transition="fade">
         <input type="button" data-icon="" data-iconpos="top" value="Asfalto">
       </a> -->
-      <a href="#lighting" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Iluminação" onclick="setCoordIluminacao()">
-      </a>
-      <a href="#water" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Água" onclick="setCoordAgua()">
-      </a>
-      <a href="#trash" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Coleta de lixo" onclick="setCoordLixo()">
-      </a>
-      <a href="#sewer" data-transition="fade">
-        <input type="button" data-icon="" data-iconpos="top" value="Esgoto" onclick="setCoordEsgoto()">
-      </a>
+      <div class="ui-grid-a button-row">
+        <div class="ui-block-a">
+          <a class="bubble-button" href="#lighting" data-transition="fade" onclick="setCoordIluminacao()">
+            <div>
+              <img src="css/images/001-light-bulb.svg" />
+            </div>
+          </a>
+          <span>Iluminação</span>
+        </div>
+        <div class="ui-block-b">
+          <a class="bubble-button" href="#water" data-transition="fade" onclick="setCoordAgua()">
+            <div>
+              <img src="css/images/004-drop.svg" />
+            </div>
+          </a>
+          <span>Água</span>
+        </div>
+      </div>
+      <div class="ui-grid-a button-row">
+        <div class="ui-block-a">
+          <a class="bubble-button" href="#trash" data-transition="fade" onclick="setCoordLixo()">
+            <div>
+              <img src="css/images/002-garbage.svg" />
+            </div>
+          </a>
+          <span>Coleta de Lixo</span>
+        </a>
+        </div>
+        <div class="ui-block-b">
+          <a class="bubble-button" href="#sewer" data-transition="fade" onclick="setCoordEsgoto()">
+            <div>
+              <img src="css/images/003-waste.svg" />
+            </div>
+          </a>
+          <span>Esgoto</span>
+        </div>
+      </div>
     </div>
 
 
 
     <div data-role="footer" data-position="fixed">
       <div data-role="navbar">
-      
+
         <ul>
-        
+
           <li>
-            <a href="http://lupanh.000webhostapp.com/LUPANH/front/" data-icon="star" class="ui-icon-myicon-site" target="_blank">Site</a>
+            <a href="http://lupanh.labhacker.org.br/LUPANH/front/" data-icon="star" class="ui-icon-myicon-site" target="_blank">Site</a>
           </li>
-        
+
           <li>
             <a href="#" data-icon="star" class="ui-icon-myicon-fb" onclick="alert('Facebook')">Facebook</a>
           </li>
-        
+
           <li>
             <a href="#" data-icon="gear" class="ui-icon-myicon-tw" onclick="alert('Twitter')">Twitter</a>
           </li>
@@ -99,26 +125,37 @@
     </div>
     <div data-role="content">
       <form id="form-iluminacao">
+      	<div class="bubble-icon">
+	        <img src="css/images/001-light-bulb.svg" />
+      	</div>
+      	
         <input type="hidden" name="latitude" id="latIlum">
         <input type="hidden" name="longitude" id="longIlum">
 
-        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
-          <legend>Possui poste?</legend>
-          <input type="radio" name="poste" id="radio-choice-w-6a" value="1" checked="checked" onclick="iluminacao('habilitar');">
-          <label for="radio-choice-w-6a">Sim</label>
-          <input type="radio" name="poste" id="radio-choice-w-6b" value="0" onclick="iluminacao('desabilitar');">
-          <label for="radio-choice-w-6b">Não</label>
-        </fieldset>
+        <div class="ui-field-contain">
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>Possui poste?</legend>
+            <input type="radio" name="poste" id="radio-choice-w-6a" value="1" checked="checked" onclick="iluminacao('habilitar');">
+            <label for="radio-choice-w-6a">Sim</label>
+            <input type="radio" name="poste" id="radio-choice-w-6b" value="0" onclick="iluminacao('desabilitar');">
+            <label for="radio-choice-w-6b">Não</label>
+          </fieldset>
+        </div>
 
-        <fieldset data-role="controlgroup" id="lamp" data-iconpos="right" data-theme="a">
-          <legend>As luzes estão funcionando?</legend>
-          <input type="radio" name="lampada" id="radio-choice-w-6c" value="1" checked="checked">
-          <label for="radio-choice-w-6c">Sim</label>
-          <input type="radio" name="lampada" id="radio-choice-w-6d" value="0">
-          <label for="radio-choice-w-6d">Não</label>
-          <input type="radio" name="lampada" id="ilumNull" value="null" style="visibility:hidden;">
-        </fieldset>
-        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormIluminacao()">Enviar</a>
+        <div class="ui-field-contain" id="lamp">
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>As luzes estão funcionando?</legend>
+            <input type="radio" name="lampada" id="radio-choice-w-6c" value="1" checked="checked">
+            <label for="radio-choice-w-6c">Sim</label>
+            <input type="radio" name="lampada" id="radio-choice-w-6d" value="0">
+            <label for="radio-choice-w-6d">Não</label>
+            <input type="radio" name="lampada" id="ilumNull" value="null" style="visibility:hidden;">
+          </fieldset>
+        </div>
+        
+        <div class="ui-field-contain">
+          <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormIluminacao()">Enviar</a>
+        </div>
       </form>
     </div>
   </div>
@@ -132,50 +169,66 @@
     </div>
     <div data-role="content">
       <form id="form-agua">
+      	<div class="bubble-icon">
+	        <img src="css/images/004-drop.svg" />
+      	</div>
 
         <input type="hidden" name="latitude" id="latAgua">
         <input type="hidden" name="longitude" id="longAgua">
 
+				<div class="ui-field-contain">
+				  <fieldset data-role="controlgroup" data-type="horizontal">
+				    <legend>Possui água encanada na sua casa, nesse momento?</legend>
+				    <input type="radio" name="encanada" id="radio-choice-w-6e" value="1" checked="checked">
+				    <label for="radio-choice-w-6e">Sim</label>
+				    <input type="radio" name="encanada" id="radio-choice-w-6f" value="0">
+				    <label for="radio-choice-w-6f">Não</label>
+				  </fieldset>
+        </div>
+        
+				<div class="ui-field-contain">
+				  <fieldset data-role="controlgroup" data-type="horizontal">
+		        <legend>Quantos dias da semana falta água na sua casa?</legend>
+		        <select name="falta" id="falta" data-theme="a">
+		          <option value="0">Não falta</option>
+		          <option value="1">1</option>
+		          <option value="2">2</option>
+		          <option value="3">3</option>
+		          <option value="4">4</option>
+		          <option value="5">5</option>
+		          <option value="6">6</option>
+		          <option value="7">7</option>
+		        </select>
+				  </fieldset>
+        </div>
+        
+				<div class="ui-field-contain">
+				  <fieldset data-role="controlgroup" data-type="horizontal">
+		        <legend>Possui poço na sua casa?</legend>
+		        <input type="radio" name="poco" id="radio-choice-w-6g" value="1" checked="checked" onclick="unablePoco('habilitar')">
+		        <label for="radio-choice-w-6g">Sim</label>
+		        <input type="radio" name="poco" id="radio-choice-w-6h" value="0" onclick="unablePoco('desabilitar')">
+		        <label for="radio-choice-w-6h">Não</label>
+		      </fieldset>
+        </div>
+        
+				<div class="ui-field-contain" id="teste">
+		      <fieldset data-role="controlgroup" data-type="horizontal">
+		        <legend>Selecione um tipo de poço:</legend>
 
-        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
-          <legend>Possui água encanada na sua casa, nesse momento?</legend>
-          <input type="radio" name="encanada" id="radio-choice-w-6e" value="1" checked="checked">
-          <label for="radio-choice-w-6e">Sim</label>
-          <input type="radio" name="encanada" id="radio-choice-w-6f" value="0">
-          <label for="radio-choice-w-6f">Não</label>
-        </fieldset>
-        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
-          <legend>Quantos dias da semana falta água na sua casa?</legend>
-          <select name="falta" id="falta" data-theme="a">
-            <option value="0">Não falta</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-          </select>
-        </fieldset>
-        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
-          <legend>Possui poço na sua casa?</legend>
-          <input type="radio" name="poco" id="radio-choice-w-6g" value="1" checked="checked" onclick="unablePoco('habilitar')">
-          <label for="radio-choice-w-6g">Sim</label>
-          <input type="radio" name="poco" id="radio-choice-w-6h" value="0" onclick="unablePoco('desabilitar')">
-          <label for="radio-choice-w-6h">Não</label>
-        </fieldset>
-        <fieldset data-role="controlgroup" id="teste" data-iconpos="right" data-theme="a">
-          <legend>Selecione um tipo de poço:</legend>
+		        <input type="radio" name="tipo_poco" id="radio-choice-v-2a" value="0" checked="checked">
+		        <label for="radio-choice-v-2a">Artesiano</label>
 
-          <input type="radio" name="tipo_poco" id="radio-choice-v-2a" value="0" checked="checked">
-          <label for="radio-choice-v-2a">Artesiano</label>
+		        <input type="radio" name="tipo_poco" id="radio-choice-v-2b" value="1">
+		        <label for="radio-choice-v-2b">Amazonas</label>
 
-          <input type="radio" name="tipo_poco" id="radio-choice-v-2b" value="1">
-          <label for="radio-choice-v-2b">Amazonas</label>
-
-          <input type="radio" name="tipo_poco" id="dispoco" value="null" style="visibility:hidden;">
-        </fieldset>
-        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormAgua()">Enviar</a>
+		        <input type="radio" name="tipo_poco" id="dispoco" value="null" style="visibility:hidden;">
+		      </fieldset>
+        </div>
+        
+        <div class="ui-field-contain">
+	        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormAgua()">Enviar</a>
+	      </div>
       </form>
     </div>
   </div>
@@ -189,30 +242,41 @@
     </div>
     <div data-role="content">
       <form id="form-lixo">
+      	<div class="bubble-icon">
+	        <img src="css/images/002-garbage.svg" />
+      	</div>
+      	
         <input type="hidden" name="latitude" id="latLixo">
         <input type="hidden" name="longitude" id="longLixo">
 
-        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
-          <legend>Possui coleta de lixo na sua casa?</legend>
-          <input type="radio" name="coleta" id="radio-choice-w-6i" value="1" checked="checked" onclick="freqColetaLixo('habilitar');">
-          <label for="radio-choice-w-6i">Sim</label>
-          <input type="radio" name="coleta" id="radio-choice-w-6j" value="0" onclick="freqColetaLixo('desabilitar');">
-          <label for="radio-choice-w-6j">Não</label>
-        </fieldset>
+				<div class="ui-field-contain">
+				  <fieldset data-role="controlgroup" data-type="horizontal">
+		        <legend>Possui coleta de lixo na sua casa?</legend>
+		        <input type="radio" name="coleta" id="radio-choice-w-6i" value="1" checked="checked" onclick="freqColetaLixo('habilitar');">
+		        <label for="radio-choice-w-6i">Sim</label>
+		        <input type="radio" name="coleta" id="radio-choice-w-6j" value="0" onclick="freqColetaLixo('desabilitar');">
+		        <label for="radio-choice-w-6j">Não</label>
+		      </fieldset>
+        </div>
 
-        <fieldset data-role="controlgroup" id="frequenciaColetaLixo" data-iconpos="right" data-theme="a">
-          <legend>Com que frequencia?</legend>
-          <input type="radio" name="frequencia" id="radio-choice-w-6cc" value="diario" checked="checked" />
-          <label for="radio-choice-w-6cc">Diario</label>
-          <input type="radio" name="frequencia" id="radio-choice-w-6bb" value="trial" />
-          <label for="radio-choice-w-6bb">3x p/ semana</label>
-          <input type="radio" name="frequencia" id="radio-choice-w-6dd" value="semanal" />
-          <label for="radio-choice-w-6dd">Semanal</label>
-          <input type="radio" name="frequencia" id="radio-choice-w-6ee" value="mensal">
-          <label for="radio-choice-w-6ee">Mensal</label>
-          <input type="radio" name="frequencia" id="frequenciaNull" value="null" style="visibility:hidden;">
-        </fieldset>
-        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormLixo()">Enviar</a>
+				<div class="ui-field-contain" id="frequenciaColetaLixo">
+		      <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+		        <legend>Com que frequencia?</legend>
+		        <input type="radio" name="frequencia" id="radio-choice-w-6cc" value="diario" checked="checked" />
+		        <label for="radio-choice-w-6cc">Diario</label>
+		        <input type="radio" name="frequencia" id="radio-choice-w-6bb" value="trial" />
+		        <label for="radio-choice-w-6bb">3x p/ semana</label>
+		        <input type="radio" name="frequencia" id="radio-choice-w-6dd" value="semanal" />
+		        <label for="radio-choice-w-6dd">Semanal</label>
+		        <input type="radio" name="frequencia" id="radio-choice-w-6ee" value="mensal">
+		        <label for="radio-choice-w-6ee">Mensal</label>
+		        <input type="radio" name="frequencia" id="frequenciaNull" value="null" style="visibility:hidden;">
+		      </fieldset>
+		    </div>
+					
+				<div class="ui-field-contain">
+	        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormLixo()">Enviar</a>
+	      </div>
       </form>
 
     </div>
@@ -227,25 +291,36 @@
     </div>
     <div data-role="content">
       <form id="form-esgoto">
+      	<div class="bubble-icon">
+	        <img src="css/images/003-waste.svg" />
+      	</div>
+      
         <input type="hidden" name="latitude" id="latEsgoto">
         <input type="hidden" name="longitude" id="longEsgoto">
 
-        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
-          <legend>Sua casa possui coleta de esgoto?</legend>
-          <input type="radio" name="esgoto" id="radio-choice-w-6k" value="1" checked="checked">
-          <label for="radio-choice-w-6k">Sim</label>
-          <input type="radio" name="esgoto" id="radio-choice-w-6l" value="0">
-          <label for="radio-choice-w-6l">Não</label>
-        </fieldset>
+				<div class="ui-field-contain">
+				  <fieldset data-role="controlgroup" data-type="horizontal">
+		        <legend>Sua casa possui coleta de esgoto?</legend>
+		        <input type="radio" name="esgoto" id="radio-choice-w-6k" value="1" checked="checked">
+		        <label for="radio-choice-w-6k">Sim</label>
+		        <input type="radio" name="esgoto" id="radio-choice-w-6l" value="0">
+		        <label for="radio-choice-w-6l">Não</label>
+		      </fieldset>
+		    </div>
 
-        <fieldset data-role="controlgroup" data-iconpos="right" data-theme="a">
-          <legend>Sua casa possui fossa?</legend>
-          <input type="radio" name="fossa" id="radio-choice-w-6m" value="1" checked="checked">
-          <label for="radio-choice-w-6m">Sim</label>
-          <input type="radio" name="fossa" id="radio-choice-w-6n" value="0">
-          <label for="radio-choice-w-6n">Não</label>
-        </fieldset>
-        <a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormEsgoto()">Enviar</a>
+				<div class="ui-field-contain">
+				  <fieldset data-role="controlgroup" data-type="horizontal">
+		        <legend>Sua casa possui fossa?</legend>
+		        <input type="radio" name="fossa" id="radio-choice-w-6m" value="1" checked="checked">
+		        <label for="radio-choice-w-6m">Sim</label>
+		        <input type="radio" name="fossa" id="radio-choice-w-6n" value="0">
+		        <label for="radio-choice-w-6n">Não</label>
+		      </fieldset>
+		    </div>
+		    
+		    <div class="ui-field-contain">
+        	<a class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-right" id="send" onclick="enviarFormEsgoto()">Enviar</a>
+       	</div>
         <!--<a href="#" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-top">Sim</a>
         <a href="#" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-top">Não</a>-->
       </form>
