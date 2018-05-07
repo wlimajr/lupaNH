@@ -4,28 +4,28 @@ da pra colocar um item em cada formulario somente pra identificar pra onde deve 
 */
 
 // função para enviar formulário de água
-var url = "https://lupanh.labhacker.org.br/LUPANH/api";
+var url = "https://lupanh.000webhostapp.com/LUPANH/api";
 
-// function enviarFormAsfalto() {
-//     var dataForm = $("#form-asfalto").serialize();
-//     $.ajax({
-//         url: url + "/asfalto",
-//         data: dataForm,
-//         method: 'POST'
-//     }).done(function (resposta) {
-//         if (resposta.status == "ok") {
-//             asdf = resposta;
-//             alert(resposta.mensagem);
-//         } else {
-//             alert(resposta);
-//         }
-//     }).fail(function () {
-//         alert("erro");
-//     });
-// }
+function enviarFormAsfalto() {
+    var dataForm = $("#form-asfalto").serialize();
+    $.ajax({
+        url: url + "/asfalto",
+        data: dataForm,
+        method: 'POST'
+    }).done(function (resposta) {
+        if (resposta.status == "ok") {
+            asdf = resposta;
+            alert(resposta.mensagem);
+        } else {
+            alert(resposta);
+        }
+    }).fail(function () {
+        alert("erro");
+    });
+}
 
 function enviarFormAgua() {
-    if (document.getElementsByName('poco')[1].checked){
+    if (document.getElementsByName('poco')[1].checked) {
         document.getElementById('dispoco').checked = true;
     }
     var dataForm = $("#form-agua").serialize();
@@ -37,7 +37,7 @@ function enviarFormAgua() {
         // beforeSend: function () {
         //     $.mobile.loading('show');
         // }
-    }).done(function(resposta) {
+    }).done(function (resposta) {
         if (resposta.status == "ok") {
             alert(resposta.mensagem);
         } else {
@@ -51,12 +51,12 @@ function enviarFormAgua() {
 // função para enviar formulário de coleta de lixo
 function enviarFormLixo() {
     // o usuario disse que nao tem esgoto
-    if (document.getElementsByName('coleta')[1].checked){
+    if (document.getElementsByName('coleta')[1].checked) {
         document.getElementById('frequenciaNull').checked = true;
     }
     var dataForm = $("#form-lixo").serialize();
     $.ajax({
-        url: url+"/lixo",
+        url: url + "/lixo",
         data: dataForm,
         method: 'POST'
     }).done(function (resposta) {
@@ -77,10 +77,10 @@ function enviarFormEsgoto() {
     console.log(dataForm);
     $.ajax({
 
-        url: url+"/esgoto",
+        url: url + "/esgoto",
         data: dataForm,
         method: 'POST',
-    }).done(function(resposta) {
+    }).done(function (resposta) {
 
         if (resposta.status == "ok") {
             alert(resposta.mensagem);
@@ -94,13 +94,13 @@ function enviarFormEsgoto() {
 
 function enviarFormIluminacao() {
     // o usuario disse que nao tem esgoto
-    if (document.getElementsByName('poste')[1].checked){
+    if (document.getElementsByName('poste')[1].checked) {
         document.getElementById('ilumNull').checked = true;
-        
+
     }
     var dataForm = $("#form-iluminacao").serialize();
     $.ajax({
-        url: url+"/iluminacao",
+        url: url + "/iluminacao",
         data: dataForm,
         method: 'POST'
     }).done(function (resposta) {
