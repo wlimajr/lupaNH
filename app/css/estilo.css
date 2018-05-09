@@ -26,8 +26,9 @@
     background-size: 18px 18px;
 }*/
 
-legend {
+.ui-page-theme-a, legend {
   color: #fff;
+  text-shadow: none;
 }
 
 /* configura estilo dos botões círculo e texto abaixo deles */
@@ -63,11 +64,9 @@ legend {
   width: 100%;
   padding-top: 0.5em;
 }
-/* 
-.bubble-icon > img {
-  padding: 5vw;
+.bubble-button img, .bubble-icon img {
+  margin: 5vw !important;
 }
-*/
 
 /* encolhe linha de botões e arruma espaço vertical entre linhas */
 .button-row {
