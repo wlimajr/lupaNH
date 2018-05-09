@@ -14,13 +14,12 @@ function enviarFormAsfalto() {
         method: 'POST'
     }).done(function (resposta) {
         if (resposta.status == "ok") {
-            asdf = resposta;
-            alert(resposta.mensagem);
+            swal("Bom trabalho!", resposta.mensagem, "success");
         } else {
-            alert(resposta);
+            swal(resposta);
         }
     }).fail(function () {
-        alert("erro");
+        swal("erro");
     });
 }
 
@@ -39,12 +38,12 @@ function enviarFormAgua() {
         // }
     }).done(function (resposta) {
         if (resposta.status == "ok") {
-            alert(resposta.mensagem);
+            swal("Bom trabalho!", resposta.mensagem, "success");
         } else {
-            alert(resposta.mensagem);
+            swal(resposta.mensagem);
         }
     }).fail(function () {
-        alert("erro tente");
+        swal("erro tente");
     });
 }
 
@@ -62,12 +61,12 @@ function enviarFormLixo() {
     }).done(function (resposta) {
         var teste = resposta;
         if (resposta.status == "ok") {
-            alert(resposta.mensagem);
+            swal("Bom trabalho!", resposta.mensagem, "success");
         } else {
-            alert(resposta);
+            swal(resposta);
         }
     }).fail(function () {
-        alert("erro");
+        swal("erro");
     });
 }
 
@@ -83,12 +82,12 @@ function enviarFormEsgoto() {
     }).done(function (resposta) {
 
         if (resposta.status == "ok") {
-            alert(resposta.mensagem);
+            swal("Bom trabalho!", resposta.mensagem, "success");
         } else {
-            alert(resposta);
+            swal(resposta);
         }
     }).fail(function () {
-        alert('erro');
+        swal('erro');
     });
 }
 
@@ -106,11 +105,11 @@ function enviarFormIluminacao() {
     }).done(function (resposta) {
         var teste = resposta;
         if (resposta.status == "ok") {
-            alert(resposta.mensagem);
+            swal("Bom trabalho!", resposta.mensagem, "success");
         } else {
-            alert(resposta);
+            swal(resposta);
         }
     }).fail(function () {
-        alert("erro");
+        swal("erro");
     });
 }

@@ -109,4 +109,3 @@ function unablePoco(status) {
     $("#teste").hide();
   }
 }
-

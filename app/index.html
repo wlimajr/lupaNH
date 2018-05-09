@@ -16,7 +16,7 @@
   <script type="text/javascript" src="js/fastClick.js"></script>
   <script type="text/javascript" src="js/jquery.mobile.js"></script>
   <script type="text/javascript" src="js/function.js"></script>
-
+  <script type="text/javascript" src="js/sweetalert2.all.js"></script>
   <script src="js/app.js"></script>
 
 </head>
@@ -27,6 +27,9 @@
 
   <div data-role="page" id="home" data-theme="a">
     <div data-role="header" data-position="fixed">
+        <a href="#services" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right" onclick="swal({
+          imageUrl: 'css/images/unifap.png',
+        })"></a>
       <h1>Aponte problemas</h1>
     </div>
     <div data-role="content">
@@ -93,11 +96,11 @@
           </li>
 
           <li>
-            <a href="#" data-icon="star" class="ui-icon-myicon-fb" onclick="alert('Facebook')">Facebook</a>
+            <a href="#" data-icon="star" class="ui-icon-myicon-fb" onclick="swal('Facebook')">Facebook</a>
           </li>
 
           <li>
-            <a href="#" data-icon="gear" class="ui-icon-myicon-tw" onclick="alert('Twitter')">Twitter</a>
+            <a href="#" data-icon="gear" class="ui-icon-myicon-tw" onclick="swal('Twitter')">Twitter</a>
           </li>
         </ul>
       </div>
