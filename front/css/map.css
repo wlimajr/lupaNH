@@ -24,7 +24,7 @@ html, body {
 }
 
 #header{
-    text-weight: bold;
+    font-weight: bold;
     background-color: #F5BA39;
     width: 100%;
     font-size: 30px;

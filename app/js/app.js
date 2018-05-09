@@ -78,6 +78,14 @@ function setCoordAsfaltFinal() {
   $("#longitudeFinal").val(longitude);
 }
 
+function limpaCoords(){
+  $("#latitudeInicial").val("");
+  $("#longitudeInicial").val("");
+  $("#latitudeFinal").val("");
+  $("#longitudeFinal").val("");
+}
+
+
 function freqColetaLixo(status) {
   if (status == 'habilitar') {
     $('#frequenciaColetaLixo').show();
