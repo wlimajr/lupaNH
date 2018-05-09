@@ -65,7 +65,7 @@
   padding-top: 0.5em;
 }
 .bubble-button img, .bubble-icon img {
-  margin: 5vw !important;
+  margin: 5vw;
 }
 
 /* encolhe linha de botões e arruma espaço vertical entre linhas */
@@ -77,3 +77,12 @@
 
 /* maior espaço pra título */
 .ui-header .ui-title { margin-left: 1em; margin-right: 1em; }
+
+/* logo do lupa */
+.lupa-logo {
+  text-align: center;
+}
+.lupa-logo img {
+  width: 40vw;
+  height: 40vw;
+}
