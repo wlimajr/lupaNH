@@ -21,6 +21,8 @@
     </author>
 	  <platform name="android"/>
   	  <plugin name="cordova-plugin-geolocation" spec="1.0.1" source="npm"/>
+  	  <plugin name="cordova-plugin-whitelist" spec="1" source="npm"/>
+
 
 	  <preference name="orientation" value="portrait" />
 	  <!--<preference name="fullscreen" value="true" />-->
