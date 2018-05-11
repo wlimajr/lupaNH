@@ -26,8 +26,9 @@
     background-size: 18px 18px;
 }*/
 
-legend {
+.ui-page-theme-a, legend {
   color: #fff;
+  text-shadow: none;
 }
 
 /* configura estilo dos botões círculo e texto abaixo deles */
@@ -63,11 +64,9 @@ legend {
   width: 100%;
   padding-top: 0.5em;
 }
-/* 
-.bubble-icon > img {
-  padding: 5vw;
+.bubble-button img, .bubble-icon img {
+  margin: 5vw;
 }
-*/
 
 /* encolhe linha de botões e arruma espaço vertical entre linhas */
 .button-row {
@@ -78,3 +77,12 @@ legend {
 
 /* maior espaço pra título */
 .ui-header .ui-title { margin-left: 1em; margin-right: 1em; }
+
+/* logo do lupa */
+.lupa-logo {
+  text-align: center;
+}
+.lupa-logo img {
+  width: 40vw;
+  height: 40vw;
+}

@@ -8,14 +8,12 @@ html, body {
     font-family: "roboto", sans-serif;
   }
 #map{
-    height:80%; 
+    height:80%;
 }
 
 #marker{
-
     text-align: center;
     font-weight: bold;
-    
 }
 
 .box{
@@ -32,5 +30,14 @@ html, body {
     text-align: center;
     padding-top: 1%;
     padding-bottom: 1%;
-    
+}
+
+.left {
+  float: left;
+}
+header a {
+  color: #2A7549;
+  text-decoration: none;
+  font-size: 0.8em;
+  margin: 0.5em;
 }
