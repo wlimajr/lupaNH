@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-    <widget xmlns   = "http://www.w3.org/ns/widgets"
+   <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "br.teste.alter"
         versionCode = "10" 
@@ -7,30 +7,35 @@
 
     <!-- versionCode is optional and Android only -->
 	
-	<!--nome do app-->
+	<!--Nome do app-->
     <name>Lupa</name>
 
-	<!--descrição-->
+	<!--Descrição-->
     <description>
 	Aplicação para mapeamento de saneamento básico e iluminação pública no bairro do Novo Horizonte em Macapá.
     </description>
 
-	<!--autor-->
+	<!--Autor-->
     <author href="https://lupanh.000webhostapp.com/LUPANH/front/" email="altemirap25@gmail.com">
 		Altemir Almeida
     </author>
-	  <platform name="android"/>
-  	  <plugin name="cordova-plugin-geolocation" spec="1.0.1" source="npm"/>
-  	  <plugin name="cordova-plugin-whitelist" spec="1" source="npm"/>
 
+	<!--Plataforma-->
+	<platform name="android"/>
 
-	  <preference name="orientation" value="portrait" />
-	  <!--<preference name="fullscreen" value="true" />-->
+	<!--Plugins-->
+  	<plugin name="cordova-plugin-geolocation" spec="1.0.1" source="npm"/>
+  	<plugin name="cordova-plugin-whitelist" spec="1" source="npm"/>
 
-	
-	<!--plugins-->
+	<!--Prefência de orientação-->	
+	<preference name="orientation" value="portrait" />
 
-	
-	<!--splashcreen-->
-
+	<!--Ícones-->
+	<platform name="android">
+		<icon src="icons/mdpi.png" platform="android" qualifier="mdpi" />
+		<icon src="icons/hdpi.png" platform="android" qualifier="hdpi" />
+		<icon src="icons/xhdpi.png" platform="android" qualifier="xhdpi" />
+		<icon src="icons/xxhdpi.png" platform="android" qualifier="xxhdpi" />
+		<icon src="icons/xxxhdpi.png" platform="android" qualifier="xxxhdpi" />
+	</platform>
 </widget>
