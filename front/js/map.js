@@ -36,7 +36,7 @@ window.initMap = () => {
                 icon: "img/trash.png",
             });
         }
-    });
+    })
 
     $.getJSON(url + '/agua').done(function (response) {
         jsonAgua = response.dados;

@@ -28,6 +28,22 @@ function enviarFormAgua() {
         document.getElementById('dispoco').checked = true;
     }
     var dataForm = $("#form-agua").serialize();
+    if ($("#latAgua").val() === "" || $("#longAgua").val() === "") {
+        swal({
+            title: 'Oops...',
+            type: 'error',
+            html:
+                'Parece que as coordenadas não foram carregadas, ligue seu GPS e ' +
+                'clique no botão <img src="css/images/icons-png/location-black.png">, ' +
+                'e tente novamente',
+            showCloseButton: true,
+            focusConfirm: false,
+            confirmButtonText:
+                'Ok!',
+            confirmButtonAriaLabel: 'Mapa',
+        })
+        return;
+    }
     $.ajax({
 
         url: url + "/agua",
@@ -54,6 +70,22 @@ function enviarFormLixo() {
         document.getElementById('frequenciaNull').checked = true;
     }
     var dataForm = $("#form-lixo").serialize();
+    if ($("#latLixo").val() === "" || $("#longLixo").val() === "") {
+        swal({
+            title: 'Oops...',
+            type: 'error',
+            html:
+                'Parece que as coordenadas não foram carregadas, ligue seu GPS e ' +
+                'clique no botão <img src="css/images/icons-png/location-black.png">, ' +
+                'e tente novamente',
+            showCloseButton: true,
+            focusConfirm: false,
+            confirmButtonText:
+                'Ok!',
+            confirmButtonAriaLabel: 'Mapa',
+        })
+        return;
+    }
     $.ajax({
         url: url + "/lixo",
         data: dataForm,
@@ -73,7 +105,22 @@ function enviarFormLixo() {
 // função para enviar formulário de esgoto
 function enviarFormEsgoto() {
     var dataForm = $("#form-esgoto").serialize();
-    console.log(dataForm);
+    if ($("#latEsgoto").val() === "" || $("#longEsgoto").val() === "") {
+        swal({
+            title: 'Oops...',
+            type: 'error',
+            html:
+                'Parece que as coordenadas não foram carregadas, ligue seu GPS e ' +
+                'clique no botão <img src="css/images/icons-png/location-black.png">, ' +
+                'e tente novamente',
+            showCloseButton: true,
+            focusConfirm: false,
+            confirmButtonText:
+                'Ok!',
+            confirmButtonAriaLabel: 'Mapa',
+        })
+        return;
+    }
     $.ajax({
 
         url: url + "/esgoto",
@@ -98,6 +145,22 @@ function enviarFormIluminacao() {
 
     }
     var dataForm = $("#form-iluminacao").serialize();
+    if ($("#latIlum").val() === "" || $("#longIlum").val() === "") {
+        swal({
+            title: 'Oops...',
+            type: 'error',
+            html:
+                'Parece que as coordenadas não foram carregadas, ligue seu GPS e ' +
+                'clique no botão <img src="css/images/icons-png/location-black.png">, ' +
+                'e tente novamente',
+            showCloseButton: true,
+            focusConfirm: false,
+            confirmButtonText:
+                'Ok!',
+            confirmButtonAriaLabel: 'Mapa',
+        })
+        return;
+    }
     $.ajax({
         url: url + "/iluminacao",
         data: dataForm,
